@@ -1,0 +1,23 @@
+﻿@model AreaQuery
+@{
+    var x = @Html.EasyUi();
+}
+<div id="divQuery" class="divQueryForm">
+    @using ( x.Form( "formQuery" ).AddClass( "form" ).Begin() ) {
+        <dl>
+            <dt>@Html.LabelFor( t => t.Text )</dt>
+            <dd>
+                @x.TextBox( t => t.Text )
+            </dd>
+        </dl>
+        <dl style="width: 100px">
+            <dt style="width: 30px">@Html.LabelFor( t => t.Enabled )</dt>
+            <dd style="width: 60px">
+                @x.Combox( t => t.Enabled, "" )
+            </dd>
+        </dl>
+        <span class="button">
+            @x.Button( "查 询" ).Width( 70 ).Icon( "icon-search" ).QueryByTreeGrid()
+        </span>
+    }
+</div>

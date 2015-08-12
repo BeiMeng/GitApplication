@@ -1,0 +1,11 @@
+﻿<div class="easyui-accordion" data-options="fit:true,border:false">
+    <div title="Title1" data-options="iconCls:'icon-save'" style="overflow:auto;">
+        @Html.EasyUi().Tree( "/Authentication/GetMeanus", "divMenuTree" ).Click( "$.project.clickMainMenuNode" )
+    </div>
+    <div title="Title2" data-options="iconCls:'icon-reload'" style="padding:10px;">
+        content2
+    </div>
+    <div title="Title3">
+        content3
+    </div>
+</div>

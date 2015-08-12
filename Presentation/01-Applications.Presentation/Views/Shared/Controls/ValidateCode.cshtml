@@ -1,0 +1,8 @@
+﻿<img style="cursor: pointer;" alt="刷新验证码" onmouseup="this.src = this.src + 1;" src="/Authentication/GenerateValidateCode?r=@Guid.NewGuid()" />
+
+<script type="text/javascript">
+    function refreshValidateCode() {
+        var img = $("img[alt='刷新验证码']").get(0);
+        img.src = img.src + 1;
+    }
+</script>

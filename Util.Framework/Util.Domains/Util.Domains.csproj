@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CDC1AD6E-C610-4BC4-AC3F-A4D405B48D94}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Util.Domains</RootNamespace>
+    <AssemblyName>Util.Domains</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Release\Util.Domains.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\..\Release\Util.Domains.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\Snk\Util.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AggregateRoot.cs" />
+    <Compile Include="ApplicationCache.cs" />
+    <Compile Include="ChangeValue.cs" />
+    <Compile Include="ChangeValueCollection.cs" />
+    <Compile Include="DomainResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DomainResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ICompareChange.cs" />
+    <Compile Include="IDomainObject.cs" />
+    <Compile Include="IDomainService.cs" />
+    <Compile Include="ITreeEntityQuery.cs" />
+    <Compile Include="ITreeEntity.cs" />
+    <Compile Include="Repositories\ICriteria.cs" />
+    <Compile Include="Repositories\ICriteria`.cs" />
+    <Compile Include="Repositories\IQueryBase.cs" />
+    <Compile Include="Repositories\Pager.cs" />
+    <Compile Include="Repositories\PagerList.cs" />
+    <Compile Include="DomainBase.cs" />
+    <Compile Include="EntityBase.cs" />
+    <Compile Include="IAggregateRoot.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\IRepository`.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IPager.cs" />
+    <Compile Include="DomainServiceBase.cs" />
+    <Compile Include="SignBuilder.cs" />
+    <Compile Include="StateDescription.cs" />
+    <Compile Include="TreeEntityBase.cs" />
+    <Compile Include="TreeEntityBase`.cs" />
+    <Compile Include="TreeEntityQuery.cs" />
+    <Compile Include="ValidationFactory.cs" />
+    <Compile Include="ValueObjectBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Util.Core\Util.Core.csproj">
+      <Project>{3598b7c6-fb59-4348-9c95-66fb48fff380}</Project>
+      <Name>Util.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util.Logs.Log4\Util.Logs.Log4.csproj">
+      <Project>{b3511358-3ab3-46c3-b747-787a1383a4e8}</Project>
+      <Name>Util.Logs.Log4</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util.Security\Util.Security.csproj">
+      <Project>{64a4e83c-b621-4a9c-8ce0-273addfb2a5c}</Project>
+      <Name>Util.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DomainResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DomainResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

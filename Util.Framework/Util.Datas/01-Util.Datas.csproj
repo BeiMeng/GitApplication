@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A0C14BE-C430-46C4-916F-54B726774D00}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Util.Datas</RootNamespace>
+    <AssemblyName>Util.Datas</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Release\Util.Datas.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\..\Release\Util.Datas.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\Snk\Util.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions.Query.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\Criterias\AndCriteria.cs" />
+    <Compile Include="Queries\Criterias\Criteria.cs" />
+    <Compile Include="Queries\Criterias\CriteriaBase.cs" />
+    <Compile Include="Queries\Criterias\DateSegmentCriteria.cs" />
+    <Compile Include="Queries\Criterias\DateTimeSegmentCriteria.cs" />
+    <Compile Include="Queries\Criterias\DecimalSegmentCriteria.cs" />
+    <Compile Include="Queries\Criterias\DoubleSegmentCriteria.cs" />
+    <Compile Include="Queries\Criterias\IntSegmentCriteria.cs" />
+    <Compile Include="Queries\Criterias\SegmentCriteria.cs" />
+    <Compile Include="Queries\IQuery.cs" />
+    <Compile Include="Queries\IQueryableFilter.cs" />
+    <Compile Include="Queries\IQuery`.cs" />
+    <Compile Include="Queries\OrderDirection.cs" />
+    <Compile Include="Queries\QueryHelper.cs" />
+    <Compile Include="Queries\Criterias\OrCriteria.cs" />
+    <Compile Include="Queries\OrderBys\OrderByBuilder.cs" />
+    <Compile Include="Queries\OrderBys\OrderByItem.cs" />
+    <Compile Include="Queries\Query.cs" />
+    <Compile Include="Queries\Query`.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Util.Core\Util.Core.csproj">
+      <Project>{3598b7c6-fb59-4348-9c95-66fb48fff380}</Project>
+      <Name>Util.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util.Domains\Util.Domains.csproj">
+      <Project>{cdc1ad6e-c610-4bc4-ac3f-a4d405b48d94}</Project>
+      <Name>Util.Domains</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

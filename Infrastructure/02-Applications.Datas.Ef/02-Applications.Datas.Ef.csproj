@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6EDDD681-6266-4976-9E5C-C0B1828F3779}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Datas.Ef</RootNamespace>
+    <AssemblyName>Applications.Datas.Ef</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BeiDreamAppUnitOfWork.cs" />
+    <Compile Include="Mappings\Commons\AreaMap.cs" />
+    <Compile Include="Mappings\Systems\TenantMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Commons\AreaRepository.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\Systems\TenantRepository.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domains\Applications.Domains\Applications.Domains.csproj">
+      <Project>{5aa5663d-2e75-4172-a5e7-a9ea306d8e68}</Project>
+      <Name>Applications.Domains</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.ApplicationServices\Util.ApplicationServices.csproj">
+      <Project>{74c54b8a-cf80-4a00-806a-908f948d10e9}</Project>
+      <Name>Util.ApplicationServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Core\Util.Core.csproj">
+      <Project>{3598b7c6-fb59-4348-9c95-66fb48fff380}</Project>
+      <Name>Util.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Datas.Ef\03-Util.Datas.Ef.csproj">
+      <Project>{1e9c5e64-1d98-4214-b107-96054bbc1c69}</Project>
+      <Name>03-Util.Datas.Ef</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Datas.SqlServer\04-Util.Datas.SqlServer.csproj">
+      <Project>{ef0514a0-339c-4846-a3d6-5f41f3c2dc31}</Project>
+      <Name>04-Util.Datas.SqlServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Datas.Sql\02-Util.Datas.Sql.csproj">
+      <Project>{f43f7230-2cf2-4f5d-a668-a116771a6e2c}</Project>
+      <Name>02-Util.Datas.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Datas\01-Util.Datas.csproj">
+      <Project>{1a0c14be-c430-46c4-916f-54b726774d00}</Project>
+      <Name>01-Util.Datas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Domains\Util.Domains.csproj">
+      <Project>{cdc1ad6e-c610-4bc4-ac3f-a4d405b48d94}</Project>
+      <Name>Util.Domains</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\01-Applications.Infrastructure\01-Applications.Infrastructure.csproj">
+      <Project>{c477f31b-0437-469e-bfec-63fbf9b7c3a8}</Project>
+      <Name>01-Applications.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

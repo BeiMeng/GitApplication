@@ -1,0 +1,1250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1E5861DC-5ED6-4F41-B5CA-309612D4C74A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Presentation</RootNamespace>
+    <AssemblyName>Applications.Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MySql.Data.6.9.7\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MySql.Data.Entity.6.9.7\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SecurityConfig.cs" />
+    <Compile Include="Areas\Commons\CommonsAreaRegistration.cs" />
+    <Compile Include="Areas\Commons\Controllers\AreaController.cs" />
+    <Compile Include="Areas\Systems\Controllers\TenantController.cs" />
+    <Compile Include="Areas\Systems\SystemsAreaRegistration.cs" />
+    <Compile Include="Base\FormControllerBase.cs" />
+    <Compile Include="Base\GridControllerBase.cs" />
+    <Compile Include="Base\QueryControllerBase.cs" />
+    <Compile Include="Base\TreeGridControllerBase.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\DesktopController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\SiteManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\common.css" />
+    <Content Include="Css\icon.css" />
+    <Content Include="Css\icons-upload\icon.css" />
+    <Content Include="Css\icons-upload\images\0-160433.gif" />
+    <Content Include="Css\icons-upload\images\0-195505.gif" />
+    <Content Include="Css\icons-upload\images\1-160433.gif" />
+    <Content Include="Css\icons-upload\images\1-195505.gif" />
+    <Content Include="Css\icons-upload\images\10-160434.gif" />
+    <Content Include="Css\icons-upload\images\10-195516.gif" />
+    <Content Include="Css\icons-upload\images\100-160438.gif" />
+    <Content Include="Css\icons-upload\images\101-160438.gif" />
+    <Content Include="Css\icons-upload\images\102-160438.gif" />
+    <Content Include="Css\icons-upload\images\103-160438.gif" />
+    <Content Include="Css\icons-upload\images\11-160434.gif" />
+    <Content Include="Css\icons-upload\images\11-195516.gif" />
+    <Content Include="Css\icons-upload\images\12-160434.gif" />
+    <Content Include="Css\icons-upload\images\12-195519.gif" />
+    <Content Include="Css\icons-upload\images\13-160434.gif" />
+    <Content Include="Css\icons-upload\images\13-195519.gif" />
+    <Content Include="Css\icons-upload\images\14-160434.gif" />
+    <Content Include="Css\icons-upload\images\14-195520.gif" />
+    <Content Include="Css\icons-upload\images\15-160434.gif" />
+    <Content Include="Css\icons-upload\images\15-195522.gif" />
+    <Content Include="Css\icons-upload\images\16-160434.gif" />
+    <Content Include="Css\icons-upload\images\16-195523.gif" />
+    <Content Include="Css\icons-upload\images\17-160434.gif" />
+    <Content Include="Css\icons-upload\images\17-195523.gif" />
+    <Content Include="Css\icons-upload\images\18-160434.gif" />
+    <Content Include="Css\icons-upload\images\18-195525.gif" />
+    <Content Include="Css\icons-upload\images\19-160434.gif" />
+    <Content Include="Css\icons-upload\images\19-195526.gif" />
+    <Content Include="Css\icons-upload\images\2-160433.gif" />
+    <Content Include="Css\icons-upload\images\2-195505.gif" />
+    <Content Include="Css\icons-upload\images\20-160434.gif" />
+    <Content Include="Css\icons-upload\images\20-195526.gif" />
+    <Content Include="Css\icons-upload\images\21-160434.gif" />
+    <Content Include="Css\icons-upload\images\21-195528.gif" />
+    <Content Include="Css\icons-upload\images\22-160434.gif" />
+    <Content Include="Css\icons-upload\images\22-195529.gif" />
+    <Content Include="Css\icons-upload\images\23-160434.gif" />
+    <Content Include="Css\icons-upload\images\23-195529.gif" />
+    <Content Include="Css\icons-upload\images\24-160434.gif" />
+    <Content Include="Css\icons-upload\images\24-195531.gif" />
+    <Content Include="Css\icons-upload\images\25-160434.gif" />
+    <Content Include="Css\icons-upload\images\25-195533.gif" />
+    <Content Include="Css\icons-upload\images\26-160435.gif" />
+    <Content Include="Css\icons-upload\images\26-195533.gif" />
+    <Content Include="Css\icons-upload\images\27-160435.gif" />
+    <Content Include="Css\icons-upload\images\27-195535.gif" />
+    <Content Include="Css\icons-upload\images\28-160435.gif" />
+    <Content Include="Css\icons-upload\images\28-195535.gif" />
+    <Content Include="Css\icons-upload\images\29-160435.gif" />
+    <Content Include="Css\icons-upload\images\29-195536.gif" />
+    <Content Include="Css\icons-upload\images\3-160433.gif" />
+    <Content Include="Css\icons-upload\images\3-195509.gif" />
+    <Content Include="Css\icons-upload\images\30-160435.gif" />
+    <Content Include="Css\icons-upload\images\30-195538.gif" />
+    <Content Include="Css\icons-upload\images\31-160435.gif" />
+    <Content Include="Css\icons-upload\images\31-195538.gif" />
+    <Content Include="Css\icons-upload\images\32-160435.gif" />
+    <Content Include="Css\icons-upload\images\32-195539.gif" />
+    <Content Include="Css\icons-upload\images\33-160435.gif" />
+    <Content Include="Css\icons-upload\images\33-195541.gif" />
+    <Content Include="Css\icons-upload\images\34-160435.gif" />
+    <Content Include="Css\icons-upload\images\34-195541.gif" />
+    <Content Include="Css\icons-upload\images\35-160435.gif" />
+    <Content Include="Css\icons-upload\images\35-195543.gif" />
+    <Content Include="Css\icons-upload\images\36-160435.gif" />
+    <Content Include="Css\icons-upload\images\36-195544.gif" />
+    <Content Include="Css\icons-upload\images\37-160435.gif" />
+    <Content Include="Css\icons-upload\images\37-195545.gif" />
+    <Content Include="Css\icons-upload\images\38-160435.gif" />
+    <Content Include="Css\icons-upload\images\38-195545.gif" />
+    <Content Include="Css\icons-upload\images\39-160435.gif" />
+    <Content Include="Css\icons-upload\images\39-195547.gif" />
+    <Content Include="Css\icons-upload\images\4-160433.gif" />
+    <Content Include="Css\icons-upload\images\4-195510.gif" />
+    <Content Include="Css\icons-upload\images\40-160435.gif" />
+    <Content Include="Css\icons-upload\images\40-195548.gif" />
+    <Content Include="Css\icons-upload\images\41-160435.gif" />
+    <Content Include="Css\icons-upload\images\41-195548.gif" />
+    <Content Include="Css\icons-upload\images\42-160435.gif" />
+    <Content Include="Css\icons-upload\images\42-195550.gif" />
+    <Content Include="Css\icons-upload\images\43-160435.gif" />
+    <Content Include="Css\icons-upload\images\43-195551.gif" />
+    <Content Include="Css\icons-upload\images\44-160435.gif" />
+    <Content Include="Css\icons-upload\images\44-195551.gif" />
+    <Content Include="Css\icons-upload\images\45-160435.gif" />
+    <Content Include="Css\icons-upload\images\45-195553.gif" />
+    <Content Include="Css\icons-upload\images\46-160435.gif" />
+    <Content Include="Css\icons-upload\images\46-195554.gif" />
+    <Content Include="Css\icons-upload\images\47-160435.gif" />
+    <Content Include="Css\icons-upload\images\47-195554.gif" />
+    <Content Include="Css\icons-upload\images\48-160436.gif" />
+    <Content Include="Css\icons-upload\images\48-195556.gif" />
+    <Content Include="Css\icons-upload\images\49-160436.gif" />
+    <Content Include="Css\icons-upload\images\49-195556.gif" />
+    <Content Include="Css\icons-upload\images\5-160433.gif" />
+    <Content Include="Css\icons-upload\images\5-195510.gif" />
+    <Content Include="Css\icons-upload\images\50-160436.gif" />
+    <Content Include="Css\icons-upload\images\50-195557.gif" />
+    <Content Include="Css\icons-upload\images\51-160436.gif" />
+    <Content Include="Css\icons-upload\images\51-195559.gif" />
+    <Content Include="Css\icons-upload\images\52-160436.gif" />
+    <Content Include="Css\icons-upload\images\52-195559.gif" />
+    <Content Include="Css\icons-upload\images\53-160436.gif" />
+    <Content Include="Css\icons-upload\images\53-195559.gif" />
+    <Content Include="Css\icons-upload\images\54-160436.gif" />
+    <Content Include="Css\icons-upload\images\54-195602.gif" />
+    <Content Include="Css\icons-upload\images\55-160436.gif" />
+    <Content Include="Css\icons-upload\images\55-195602.gif" />
+    <Content Include="Css\icons-upload\images\56-160436.gif" />
+    <Content Include="Css\icons-upload\images\56-195602.gif" />
+    <Content Include="Css\icons-upload\images\57-160436.gif" />
+    <Content Include="Css\icons-upload\images\57-195605.gif" />
+    <Content Include="Css\icons-upload\images\58-160436.gif" />
+    <Content Include="Css\icons-upload\images\58-195605.gif" />
+    <Content Include="Css\icons-upload\images\59-160436.gif" />
+    <Content Include="Css\icons-upload\images\59-195605.gif" />
+    <Content Include="Css\icons-upload\images\6-160433.gif" />
+    <Content Include="Css\icons-upload\images\6-195513.gif" />
+    <Content Include="Css\icons-upload\images\60-160436.gif" />
+    <Content Include="Css\icons-upload\images\60-195607.gif" />
+    <Content Include="Css\icons-upload\images\61-160436.gif" />
+    <Content Include="Css\icons-upload\images\61-195607.gif" />
+    <Content Include="Css\icons-upload\images\62-160436.gif" />
+    <Content Include="Css\icons-upload\images\62-195608.gif" />
+    <Content Include="Css\icons-upload\images\63-160436.gif" />
+    <Content Include="Css\icons-upload\images\63-195610.gif" />
+    <Content Include="Css\icons-upload\images\64-160437.gif" />
+    <Content Include="Css\icons-upload\images\64-195611.gif" />
+    <Content Include="Css\icons-upload\images\65-160437.gif" />
+    <Content Include="Css\icons-upload\images\65-195611.gif" />
+    <Content Include="Css\icons-upload\images\66-160437.gif" />
+    <Content Include="Css\icons-upload\images\66-195613.gif" />
+    <Content Include="Css\icons-upload\images\67-160437.gif" />
+    <Content Include="Css\icons-upload\images\67-195613.gif" />
+    <Content Include="Css\icons-upload\images\68-160437.gif" />
+    <Content Include="Css\icons-upload\images\68-195614.gif" />
+    <Content Include="Css\icons-upload\images\69-160437.gif" />
+    <Content Include="Css\icons-upload\images\69-195616.gif" />
+    <Content Include="Css\icons-upload\images\7-160433.gif" />
+    <Content Include="Css\icons-upload\images\7-195513.gif" />
+    <Content Include="Css\icons-upload\images\70-160437.gif" />
+    <Content Include="Css\icons-upload\images\70-195616.gif" />
+    <Content Include="Css\icons-upload\images\71-160437.gif" />
+    <Content Include="Css\icons-upload\images\71-195616.gif" />
+    <Content Include="Css\icons-upload\images\72-160437.gif" />
+    <Content Include="Css\icons-upload\images\72-195619.gif" />
+    <Content Include="Css\icons-upload\images\73-160437.gif" />
+    <Content Include="Css\icons-upload\images\73-195619.gif" />
+    <Content Include="Css\icons-upload\images\74-160437.gif" />
+    <Content Include="Css\icons-upload\images\74-195619.gif" />
+    <Content Include="Css\icons-upload\images\75-160437.gif" />
+    <Content Include="Css\icons-upload\images\75-195622.gif" />
+    <Content Include="Css\icons-upload\images\76-160437.gif" />
+    <Content Include="Css\icons-upload\images\76-195622.gif" />
+    <Content Include="Css\icons-upload\images\77-160437.gif" />
+    <Content Include="Css\icons-upload\images\77-195623.gif" />
+    <Content Include="Css\icons-upload\images\78-160437.gif" />
+    <Content Include="Css\icons-upload\images\78-195625.gif" />
+    <Content Include="Css\icons-upload\images\79-160437.gif" />
+    <Content Include="Css\icons-upload\images\79-195625.gif" />
+    <Content Include="Css\icons-upload\images\8-160433.gif" />
+    <Content Include="Css\icons-upload\images\8-195514.gif" />
+    <Content Include="Css\icons-upload\images\80-160437.gif" />
+    <Content Include="Css\icons-upload\images\80-195626.gif" />
+    <Content Include="Css\icons-upload\images\81-160437.gif" />
+    <Content Include="Css\icons-upload\images\81-195628.gif" />
+    <Content Include="Css\icons-upload\images\82-160437.gif" />
+    <Content Include="Css\icons-upload\images\82-195628.gif" />
+    <Content Include="Css\icons-upload\images\83-160437.gif" />
+    <Content Include="Css\icons-upload\images\83-195629.gif" />
+    <Content Include="Css\icons-upload\images\84-160437.gif" />
+    <Content Include="Css\icons-upload\images\84-195631.gif" />
+    <Content Include="Css\icons-upload\images\85-160437.gif" />
+    <Content Include="Css\icons-upload\images\85-195631.gif" />
+    <Content Include="Css\icons-upload\images\86-160437.gif" />
+    <Content Include="Css\icons-upload\images\86-195632.gif" />
+    <Content Include="Css\icons-upload\images\87-160437.gif" />
+    <Content Include="Css\icons-upload\images\87-195634.gif" />
+    <Content Include="Css\icons-upload\images\88-160437.gif" />
+    <Content Include="Css\icons-upload\images\88-195635.gif" />
+    <Content Include="Css\icons-upload\images\89-160437.gif" />
+    <Content Include="Css\icons-upload\images\89-195635.gif" />
+    <Content Include="Css\icons-upload\images\9-160434.gif" />
+    <Content Include="Css\icons-upload\images\9-195516.gif" />
+    <Content Include="Css\icons-upload\images\90-160437.gif" />
+    <Content Include="Css\icons-upload\images\90-195637.gif" />
+    <Content Include="Css\icons-upload\images\91-160437.gif" />
+    <Content Include="Css\icons-upload\images\91-195638.gif" />
+    <Content Include="Css\icons-upload\images\92-160437.gif" />
+    <Content Include="Css\icons-upload\images\92-195638.gif" />
+    <Content Include="Css\icons-upload\images\93-160437.gif" />
+    <Content Include="Css\icons-upload\images\93-195640.gif" />
+    <Content Include="Css\icons-upload\images\94-160437.gif" />
+    <Content Include="Css\icons-upload\images\94-195640.gif" />
+    <Content Include="Css\icons-upload\images\95-160438.gif" />
+    <Content Include="Css\icons-upload\images\95-195641.gif" />
+    <Content Include="Css\icons-upload\images\96-160438.gif" />
+    <Content Include="Css\icons-upload\images\97-160438.gif" />
+    <Content Include="Css\icons-upload\images\98-160438.gif" />
+    <Content Include="Css\icons-upload\images\99-160438.gif" />
+    <Content Include="Css\icons-upload\images\biaoqing-160438.png" />
+    <Content Include="Css\icons-upload\images\emotion_adore-090439.png" />
+    <Content Include="Css\icons-upload\images\emotion_after_boom-090439.png" />
+    <Content Include="Css\icons-upload\images\emotion_ah-090439.png" />
+    <Content Include="Css\icons-upload\images\emotion_alien-090440.png" />
+    <Content Include="Css\icons-upload\images\emotion_amazing-090440.png" />
+    <Content Include="Css\icons-upload\images\emotion_angel-090440.png" />
+    <Content Include="Css\icons-upload\images\emotion_anger-090440.png" />
+    <Content Include="Css\icons-upload\images\emotion_angry-090441.png" />
+    <Content Include="Css\icons-upload\images\emotion_aqua-090441.png" />
+    <Content Include="Css\icons-upload\images\emotion_baby-090441.png" />
+    <Content Include="Css\icons-upload\images\emotion_bad_egg-090441.png" />
+    <Content Include="Css\icons-upload\images\emotion_bad_smelly-090441.png" />
+    <Content Include="Css\icons-upload\images\emotion_baffle-090441.png" />
+    <Content Include="Css\icons-upload\images\emotion_batman-090441.png" />
+    <Content Include="Css\icons-upload\images\emotion_beaten-090441.png" />
+    <Content Include="Css\icons-upload\images\emotion_beat_brick-090441.png" />
+    <Content Include="Css\icons-upload\images\emotion_bigsmile-090441.png" />
+    <Content Include="Css\icons-upload\images\emotion_blind-090441.png" />
+    <Content Include="Css\icons-upload\images\emotion_bloody-090442.png" />
+    <Content Include="Css\icons-upload\images\emotion_blow_current-090442.png" />
+    <Content Include="Css\icons-upload\images\emotion_boo-090442.png" />
+    <Content Include="Css\icons-upload\images\emotion_brains-090442.png" />
+    <Content Include="Css\icons-upload\images\emotion_bubblegum-090442.png" />
+    <Content Include="Css\icons-upload\images\emotion_bully-090442.png" />
+    <Content Include="Css\icons-upload\images\emotion_burnt-090442.png" />
+    <Content Include="Css\icons-upload\images\emotion_burn_joss_stick-090442.png" />
+    <Content Include="Css\icons-upload\images\emotion_bye_bye-090442.png" />
+    <Content Include="Css\icons-upload\images\emotion_chinese-090442.png" />
+    <Content Include="Css\icons-upload\images\emotion_chupachups-090443.png" />
+    <Content Include="Css\icons-upload\images\emotion_clown-090443.png" />
+    <Content Include="Css\icons-upload\images\emotion_cold-090443.png" />
+    <Content Include="Css\icons-upload\images\emotion_confident-090443.png" />
+    <Content Include="Css\icons-upload\images\emotion_confuse-090443.png" />
+    <Content Include="Css\icons-upload\images\emotion_convict-090443.png" />
+    <Content Include="Css\icons-upload\images\emotion_cool-090443.png" />
+    <Content Include="Css\icons-upload\images\emotion_crazy-090443.png" />
+    <Content Include="Css\icons-upload\images\emotion_crazy_rabbit-090443.png" />
+    <Content Include="Css\icons-upload\images\emotion_cry-090443.png" />
+    <Content Include="Css\icons-upload\images\emotion_cyclops-090443.png" />
+    <Content Include="Css\icons-upload\images\emotion_daddy_cool-090443.png" />
+    <Content Include="Css\icons-upload\images\emotion_darth_wader-090444.png" />
+    <Content Include="Css\icons-upload\images\emotion_david_blaine-090444.png" />
+    <Content Include="Css\icons-upload\images\emotion_dead-090444.png" />
+    <Content Include="Css\icons-upload\images\emotion_detective-090444.png" />
+    <Content Include="Css\icons-upload\images\emotion_devil-090445.png" />
+    <Content Include="Css\icons-upload\images\emotion_diver-090445.png" />
+    <Content Include="Css\icons-upload\images\emotion_doubt-090445.png" />
+    <Content Include="Css\icons-upload\images\emotion_doze-090445.png" />
+    <Content Include="Css\icons-upload\images\emotion_draw-090446.png" />
+    <Content Include="Css\icons-upload\images\emotion_dribble-090446.png" />
+    <Content Include="Css\icons-upload\images\emotion_drink-090446.png" />
+    <Content Include="Css\icons-upload\images\emotion_drunkard-090446.png" />
+    <Content Include="Css\icons-upload\images\emotion_evilgrin-090446.png" />
+    <Content Include="Css\icons-upload\images\emotion_evolution-090446.png" />
+    <Content Include="Css\icons-upload\images\emotion_exciting-090446.png" />
+    <Content Include="Css\icons-upload\images\emotion_eye-090446.png" />
+    <Content Include="Css\icons-upload\images\emotion_eyes_droped-090446.png" />
+    <Content Include="Css\icons-upload\images\emotion_face_monkey-090446.png" />
+    <Content Include="Css\icons-upload\images\emotion_face_panda-090446.png" />
+    <Content Include="Css\icons-upload\images\emotion_fan-090446.png" />
+    <Content Include="Css\icons-upload\images\emotion_fire-090446.png" />
+    <Content Include="Css\icons-upload\images\emotion_flower_dead-090447.png" />
+    <Content Include="Css\icons-upload\images\emotion_franken-090447.png" />
+    <Content Include="Css\icons-upload\images\emotion_freak-090447.png" />
+    <Content Include="Css\icons-upload\images\emotion_frost-090447.png" />
+    <Content Include="Css\icons-upload\images\emotion_gangs-090447.png" />
+    <Content Include="Css\icons-upload\images\emotion_gear-090447.png" />
+    <Content Include="Css\icons-upload\images\emotion_ghost-090447.png" />
+    <Content Include="Css\icons-upload\images\emotion_girl-090447.png" />
+    <Content Include="Css\icons-upload\images\emotion_go-090447.png" />
+    <Content Include="Css\icons-upload\images\emotion_gourmand-090448.png" />
+    <Content Include="Css\icons-upload\images\emotion_grad_green-090448.png" />
+    <Content Include="Css\icons-upload\images\emotion_grad_red-090448.png" />
+    <Content Include="Css\icons-upload\images\emotion_grad_yellow-090448.png" />
+    <Content Include="Css\icons-upload\images\emotion_greedy-090448.png" />
+    <Content Include="Css\icons-upload\images\emotion_grin-090448.png" />
+    <Content Include="Css\icons-upload\images\emotion_haha-090448.png" />
+    <Content Include="Css\icons-upload\images\emotion_hand_flower-090448.png" />
+    <Content Include="Css\icons-upload\images\emotion_happy-090448.png" />
+    <Content Include="Css\icons-upload\images\emotion_harry_potter-090449.png" />
+    <Content Include="Css\icons-upload\images\emotion_hatched-090449.png" />
+    <Content Include="Css\icons-upload\images\emotion_hidden-090449.png" />
+    <Content Include="Css\icons-upload\images\emotion_hitler-090449.png" />
+    <Content Include="Css\icons-upload\images\emotion_horror-090449.png" />
+    <Content Include="Css\icons-upload\images\emotion_hot-090449.png" />
+    <Content Include="Css\icons-upload\images\emotion_hungry-090449.png" />
+    <Content Include="Css\icons-upload\images\emotion_hypnotized-090449.png" />
+    <Content Include="Css\icons-upload\images\emotion_injured-090449.png" />
+    <Content Include="Css\icons-upload\images\emotion_japan-090449.png" />
+    <Content Include="Css\icons-upload\images\emotion_jason-090449.png" />
+    <Content Include="Css\icons-upload\images\emotion_juggler-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_kiddy-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_kiss-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_kissed-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_knight-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_lol-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_lollipops-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_love-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_mad-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_mah_playlist-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_matrix-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_meaw-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_medic-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_misdoubt-090450.png" />
+    <Content Include="Css\icons-upload\images\emotion_money-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_mummy-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_musician-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_nerd-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_ninja-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_nom_nom-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_nosebleed-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_nose_pick-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_oddball-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_party-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_patient-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_pirate-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_pumpkin-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_punk-090451.png" />
+    <Content Include="Css\icons-upload\images\emotion_question-090452.png" />
+    <Content Include="Css\icons-upload\images\emotion_rap-090452.png" />
+    <Content Include="Css\icons-upload\images\emotion_razz-090452.png" />
+    <Content Include="Css\icons-upload\images\emotion_reading-090452.png" />
+    <Content Include="Css\icons-upload\images\emotion_red-090452.png" />
+    <Content Include="Css\icons-upload\images\emotion_rocknroll-090452.png" />
+    <Content Include="Css\icons-upload\images\emotion_sad-090452.png" />
+    <Content Include="Css\icons-upload\images\emotion_shame-090452.png" />
+    <Content Include="Css\icons-upload\images\emotion_shave-090452.png" />
+    <Content Include="Css\icons-upload\images\emotion_shocked-090452.png" />
+    <Content Include="Css\icons-upload\images\emotion_sick-090452.png" />
+    <Content Include="Css\icons-upload\images\emotion_silent-090452.png" />
+    <Content Include="Css\icons-upload\images\emotion_skull-090452.png" />
+    <Content Include="Css\icons-upload\images\emotion_sleep-090453.png" />
+    <Content Include="Css\icons-upload\images\emotion_smile-090453.png" />
+    <Content Include="Css\icons-upload\images\emotion_smokes_grass-090453.png" />
+    <Content Include="Css\icons-upload\images\emotion_snooty-090453.png" />
+    <Content Include="Css\icons-upload\images\emotion_speaking-090453.png" />
+    <Content Include="Css\icons-upload\images\emotion_spiderman-090453.png" />
+    <Content Include="Css\icons-upload\images\emotion_spy-090453.png" />
+    <Content Include="Css\icons-upload\images\emotion_star-090453.png" />
+    <Content Include="Css\icons-upload\images\emotion_still_dreaming-090453.png" />
+    <Content Include="Css\icons-upload\images\emotion_stink-090453.png" />
+    <Content Include="Css\icons-upload\images\emotion_struggle-090453.png" />
+    <Content Include="Css\icons-upload\images\emotion_stupid-090453.png" />
+    <Content Include="Css\icons-upload\images\emotion_superman-090453.png" />
+    <Content Include="Css\icons-upload\images\emotion_suprised-090454.png" />
+    <Content Include="Css\icons-upload\images\emotion_sure-090454.png" />
+    <Content Include="Css\icons-upload\images\emotion_surrender-090454.png" />
+    <Content Include="Css\icons-upload\images\emotion_sweat-090454.png" />
+    <Content Include="Css\icons-upload\images\emotion_terminator-090454.png" />
+    <Content Include="Css\icons-upload\images\emotion_tire-090454.png" />
+    <Content Include="Css\icons-upload\images\emotion_tomato-090454.png" />
+    <Content Include="Css\icons-upload\images\emotion_tongue-090454.png" />
+    <Content Include="Css\icons-upload\images\emotion_too_sad-090454.png" />
+    <Content Include="Css\icons-upload\images\emotion_umbrella-090454.png" />
+    <Content Include="Css\icons-upload\images\emotion_unbelievable-090454.png" />
+    <Content Include="Css\icons-upload\images\emotion_unhappy-090455.png" />
+    <Content Include="Css\icons-upload\images\emotion_unhappy2-090454.png" />
+    <Content Include="Css\icons-upload\images\emotion_unshaven-090455.png" />
+    <Content Include="Css\icons-upload\images\emotion_vampire-090455.png" />
+    <Content Include="Css\icons-upload\images\emotion_victory-090455.png" />
+    <Content Include="Css\icons-upload\images\emotion_viking-090455.png" />
+    <Content Include="Css\icons-upload\images\emotion_waaaht-090455.png" />
+    <Content Include="Css\icons-upload\images\emotion_waii-090455.png" />
+    <Content Include="Css\icons-upload\images\emotion_watermelon-090455.png" />
+    <Content Include="Css\icons-upload\images\emotion_what-090455.png" />
+    <Content Include="Css\icons-upload\images\emotion_whew-090455.png" />
+    <Content Include="Css\icons-upload\images\emotion_whist-090455.png" />
+    <Content Include="Css\icons-upload\images\emotion_wink-090455.png" />
+    <Content Include="Css\icons-upload\images\emotion_yuush-090456.png" />
+    <Content Include="Css\icons-upload\images\emotion_zedz-090456.png" />
+    <Content Include="Css\icons-upload\images\emotion_zingy-090456.png" />
+    <Content Include="Css\icons-upload\images\user-090456.png" />
+    <Content Include="Css\icons-upload\images\user_add-090456.png" />
+    <Content Include="Css\icons-upload\images\user_alien-090456.png" />
+    <Content Include="Css\icons-upload\images\user_angel-090456.png" />
+    <Content Include="Css\icons-upload\images\user_angel_black-090456.png" />
+    <Content Include="Css\icons-upload\images\user_angel_female-090456.png" />
+    <Content Include="Css\icons-upload\images\user_angel_female_black-090456.png" />
+    <Content Include="Css\icons-upload\images\user_astronaut-090456.png" />
+    <Content Include="Css\icons-upload\images\user_ballplayer-090456.png" />
+    <Content Include="Css\icons-upload\images\user_ballplayer_black-090456.png" />
+    <Content Include="Css\icons-upload\images\user_banker-090456.png" />
+    <Content Include="Css\icons-upload\images\user_bart-090456.png" />
+    <Content Include="Css\icons-upload\images\user_batman-090457.png" />
+    <Content Include="Css\icons-upload\images\user_beach_lifeguard-090457.png" />
+    <Content Include="Css\icons-upload\images\user_beach_lifeguard_female-090457.png" />
+    <Content Include="Css\icons-upload\images\user_bender-090457.png" />
+    <Content Include="Css\icons-upload\images\user_bishop-090457.png" />
+    <Content Include="Css\icons-upload\images\user_blondy-090457.png" />
+    <Content Include="Css\icons-upload\images\user_boxer-090457.png" />
+    <Content Include="Css\icons-upload\images\user_boxer_black-090457.png" />
+    <Content Include="Css\icons-upload\images\user_buddhist-090457.png" />
+    <Content Include="Css\icons-upload\images\user_c3po-090457.png" />
+    <Content Include="Css\icons-upload\images\user_catwomen-090457.png" />
+    <Content Include="Css\icons-upload\images\user_chief-090458.png" />
+    <Content Include="Css\icons-upload\images\user_chief_black-090458.png" />
+    <Content Include="Css\icons-upload\images\user_chief_female-090458.png" />
+    <Content Include="Css\icons-upload\images\user_chief_female_black-090458.png" />
+    <Content Include="Css\icons-upload\images\user_clown-090458.png" />
+    <Content Include="Css\icons-upload\images\user_comment-090458.png" />
+    <Content Include="Css\icons-upload\images\user_cook-090458.png" />
+    <Content Include="Css\icons-upload\images\user_cook_black-090458.png" />
+    <Content Include="Css\icons-upload\images\user_cook_female-090458.png" />
+    <Content Include="Css\icons-upload\images\user_cook_female_black-090458.png" />
+    <Content Include="Css\icons-upload\images\user_cowboy-090458.png" />
+    <Content Include="Css\icons-upload\images\user_cowboy_female-090458.png" />
+    <Content Include="Css\icons-upload\images\user_crabs-090458.png" />
+    <Content Include="Css\icons-upload\images\user_darth_vader-090459.png" />
+    <Content Include="Css\icons-upload\images\user_death-090459.png" />
+    <Content Include="Css\icons-upload\images\user_delete-090459.png" />
+    <Content Include="Css\icons-upload\images\user_detective-090459.png" />
+    <Content Include="Css\icons-upload\images\user_detective_gray-090459.png" />
+    <Content Include="Css\icons-upload\images\user_devil-090459.png" />
+    <Content Include="Css\icons-upload\images\user_diver-090459.png" />
+    <Content Include="Css\icons-upload\images\user_dracula-090459.png" />
+    <Content Include="Css\icons-upload\images\user_edit-090459.png" />
+    <Content Include="Css\icons-upload\images\user_egyptian-090459.png" />
+    <Content Include="Css\icons-upload\images\user_egyptian_female-090500.png" />
+    <Content Include="Css\icons-upload\images\user_emo-090500.png" />
+    <Content Include="Css\icons-upload\images\user_eskimo-090500.png" />
+    <Content Include="Css\icons-upload\images\user_eskimo_female-090500.png" />
+    <Content Include="Css\icons-upload\images\user_female-090500.png" />
+    <Content Include="Css\icons-upload\images\user_firefighter-090500.png" />
+    <Content Include="Css\icons-upload\images\user_firefighter_black-090500.png" />
+    <Content Include="Css\icons-upload\images\user_freddy-090500.png" />
+    <Content Include="Css\icons-upload\images\user_geisha-090500.png" />
+    <Content Include="Css\icons-upload\images\user_gladiator-090500.png" />
+    <Content Include="Css\icons-upload\images\user_go-090500.png" />
+    <Content Include="Css\icons-upload\images\user_gomer-090500.png" />
+    <Content Include="Css\icons-upload\images\user_goth-090501.png" />
+    <Content Include="Css\icons-upload\images\user_gray-090501.png" />
+    <Content Include="Css\icons-upload\images\user_green-090501.png" />
+    <Content Include="Css\icons-upload\images\user_halk-090501.png" />
+    <Content Include="Css\icons-upload\images\user_hendrix-090501.png" />
+    <Content Include="Css\icons-upload\images\user_imprisoned-090501.png" />
+    <Content Include="Css\icons-upload\images\user_imprisoned_black-090501.png" />
+    <Content Include="Css\icons-upload\images\user_imprisoned_female-090501.png" />
+    <Content Include="Css\icons-upload\images\user_imprisoned_female_black-090501.png" />
+    <Content Include="Css\icons-upload\images\user_indian-090501.png" />
+    <Content Include="Css\icons-upload\images\user_indian_female-090501.png" />
+    <Content Include="Css\icons-upload\images\user_ironman-090501.png" />
+    <Content Include="Css\icons-upload\images\user_jason-090501.png" />
+    <Content Include="Css\icons-upload\images\user_jawa-090502.png" />
+    <Content Include="Css\icons-upload\images\user_jester-090502.png" />
+    <Content Include="Css\icons-upload\images\user_jew-090502.png" />
+    <Content Include="Css\icons-upload\images\user_judge-090502.png" />
+    <Content Include="Css\icons-upload\images\user_judge_black-090502.png" />
+    <Content Include="Css\icons-upload\images\user_king-090502.png" />
+    <Content Include="Css\icons-upload\images\user_king_black-090502.png" />
+    <Content Include="Css\icons-upload\images\user_knight-090502.png" />
+    <Content Include="Css\icons-upload\images\user_leprechaun-090502.png" />
+    <Content Include="Css\icons-upload\images\user_level_filtering-090502.png" />
+    <Content Include="Css\icons-upload\images\user_lisa-090502.png" />
+    <Content Include="Css\icons-upload\images\user_maid-090502.png" />
+    <Content Include="Css\icons-upload\images\user_medical-090502.png" />
+    <Content Include="Css\icons-upload\images\user_medical_black-090503.png" />
+    <Content Include="Css\icons-upload\images\user_medical_female-090503.png" />
+    <Content Include="Css\icons-upload\images\user_medical_female_black-090503.png" />
+    <Content Include="Css\icons-upload\images\user_mexican-090503.png" />
+    <Content Include="Css\icons-upload\images\user_muslim-090503.png" />
+    <Content Include="Css\icons-upload\images\user_muslim_female-090503.png" />
+    <Content Include="Css\icons-upload\images\user_ninja-090503.png" />
+    <Content Include="Css\icons-upload\images\user_nude-090503.png" />
+    <Content Include="Css\icons-upload\images\user_nude_black-090503.png" />
+    <Content Include="Css\icons-upload\images\user_nude_female-090503.png" />
+    <Content Include="Css\icons-upload\images\user_nude_female_black-090503.png" />
+    <Content Include="Css\icons-upload\images\user_nun-090503.png" />
+    <Content Include="Css\icons-upload\images\user_nun_black-090503.png" />
+    <Content Include="Css\icons-upload\images\user_officer-090503.png" />
+    <Content Include="Css\icons-upload\images\user_officer_black-090504.png" />
+    <Content Include="Css\icons-upload\images\user_oldman-090504.png" />
+    <Content Include="Css\icons-upload\images\user_oldman_black-090504.png" />
+    <Content Include="Css\icons-upload\images\user_oldwoman-090504.png" />
+    <Content Include="Css\icons-upload\images\user_oldwoman_black-090504.png" />
+    <Content Include="Css\icons-upload\images\user_orange-090504.png" />
+    <Content Include="Css\icons-upload\images\user_patrick-090504.png" />
+    <Content Include="Css\icons-upload\images\user_pilot-090504.png" />
+    <Content Include="Css\icons-upload\images\user_pilot_civil-090504.png" />
+    <Content Include="Css\icons-upload\images\user_pirate-090504.png" />
+    <Content Include="Css\icons-upload\images\user_plankton-090504.png" />
+    <Content Include="Css\icons-upload\images\user_policeman-090504.png" />
+    <Content Include="Css\icons-upload\images\user_policeman2-090504.png" />
+    <Content Include="Css\icons-upload\images\user_police_england-090504.png" />
+    <Content Include="Css\icons-upload\images\user_police_female-090504.png" />
+    <Content Include="Css\icons-upload\images\user_police_female_black-090504.png" />
+    <Content Include="Css\icons-upload\images\user_priest-090504.png" />
+    <Content Include="Css\icons-upload\images\user_priest_black-090505.png" />
+    <Content Include="Css\icons-upload\images\user_pumpkin-090505.png" />
+    <Content Include="Css\icons-upload\images\user_queen-090505.png" />
+    <Content Include="Css\icons-upload\images\user_queen_black-090505.png" />
+    <Content Include="Css\icons-upload\images\user_r2d2-090505.png" />
+    <Content Include="Css\icons-upload\images\user_racer-090505.png" />
+    <Content Include="Css\icons-upload\images\user_rambo-090505.png" />
+    <Content Include="Css\icons-upload\images\user_red-090505.png" />
+    <Content Include="Css\icons-upload\images\user_redskin-090505.png" />
+    <Content Include="Css\icons-upload\images\user_robocop-090505.png" />
+    <Content Include="Css\icons-upload\images\user_sailor-090505.png" />
+    <Content Include="Css\icons-upload\images\user_sailor_black-090506.png" />
+    <Content Include="Css\icons-upload\images\user_samurai-090506.png" />
+    <Content Include="Css\icons-upload\images\user_scream-090506.png" />
+    <Content Include="Css\icons-upload\images\user_silhouette-090506.png" />
+    <Content Include="Css\icons-upload\images\user_soldier-090506.png" />
+    <Content Include="Css\icons-upload\images\user_spiderman-090506.png" />
+    <Content Include="Css\icons-upload\images\user_sponge_bob-090506.png" />
+    <Content Include="Css\icons-upload\images\user_squidward-090506.png" />
+    <Content Include="Css\icons-upload\images\user_stewardess-090506.png" />
+    <Content Include="Css\icons-upload\images\user_stewardess_black-090506.png" />
+    <Content Include="Css\icons-upload\images\user_striper-090507.png" />
+    <Content Include="Css\icons-upload\images\user_striper_black-090507.png" />
+    <Content Include="Css\icons-upload\images\user_student-090507.png" />
+    <Content Include="Css\icons-upload\images\user_student_black-090507.png" />
+    <Content Include="Css\icons-upload\images\user_student_female-090507.png" />
+    <Content Include="Css\icons-upload\images\user_student_female_black-090507.png" />
+    <Content Include="Css\icons-upload\images\user_suit-090507.png" />
+    <Content Include="Css\icons-upload\images\user_superman-090507.png" />
+    <Content Include="Css\icons-upload\images\user_swimmer-090507.png" />
+    <Content Include="Css\icons-upload\images\user_swimmer_black-090507.png" />
+    <Content Include="Css\icons-upload\images\user_swimmer_female-090507.png" />
+    <Content Include="Css\icons-upload\images\user_trooper-090507.png" />
+    <Content Include="Css\icons-upload\images\user_trooper_captain-090508.png" />
+    <Content Include="Css\icons-upload\images\user_vietnamese-090508.png" />
+    <Content Include="Css\icons-upload\images\user_vietnamese_female-090508.png" />
+    <Content Include="Css\icons-upload\images\user_viking-090508.png" />
+    <Content Include="Css\icons-upload\images\user_viking_female-090508.png" />
+    <Content Include="Css\icons-upload\images\user_waiter-090508.png" />
+    <Content Include="Css\icons-upload\images\user_waiter_female-090508.png" />
+    <Content Include="Css\icons-upload\images\user_waiter_female_black-090508.png" />
+    <Content Include="Css\icons-upload\images\user_wicket-090508.png" />
+    <Content Include="Css\icons-upload\images\user_yoda-090508.png" />
+    <Content Include="Css\icons-upload\images\user_zorro-090508.png" />
+    <Content Include="Css\icons\add.png" />
+    <Content Include="Css\icons\add_2.png" />
+    <Content Include="Css\icons\arrow_down.png" />
+    <Content Include="Css\icons\arrow_up.png" />
+    <Content Include="Css\icons\cancel.png" />
+    <Content Include="Css\icons\delete.png" />
+    <Content Include="Css\icons\edit.png" />
+    <Content Include="Css\icons\edit_2.png" />
+    <Content Include="Css\icons\eye.png" />
+    <Content Include="Css\icons\house.png" />
+    <Content Include="Css\icons\icons.png" />
+    <Content Include="Css\icons\no.png" />
+    <Content Include="Css\icons\ok.png" />
+    <Content Include="Css\icons\pdf.png" />
+    <Content Include="Css\icons\reload.png" />
+    <Content Include="Css\icons\remove.png" />
+    <Content Include="Css\icons\save.png" />
+    <Content Include="Css\icons\search.png" />
+    <Content Include="Css\images\cloud.png" />
+    <Content Include="Css\images\lookup.gif" />
+    <Content Include="Css\images\uploaders\bg.png" />
+    <Content Include="Css\images\uploaders\icons.png" />
+    <Content Include="Css\images\uploaders\image.png" />
+    <Content Include="Css\images\uploaders\progress.png" />
+    <Content Include="Css\images\uploaders\success.png" />
+    <Content Include="Css\projects\login\images\001.png" />
+    <Content Include="Css\projects\login\images\002.png" />
+    <Content Include="Css\projects\login\images\003.png" />
+    <Content Include="Css\projects\login\images\004.png" />
+    <Content Include="Css\projects\login\images\button1.png" />
+    <Content Include="Css\projects\login\images\loading.gif" />
+    <Content Include="Css\projects\login\login.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="packages.config" />
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\easyui\easyui-lang-zh_CN.js" />
+    <Content Include="Scripts\easyui\jquery.easyui.datagrid.detailview.js" />
+    <Content Include="Scripts\easyui\jquery.easyui.datagrid.lookup.js" />
+    <Content Include="Scripts\easyui\jquery.easyui.edatagrid.js" />
+    <Content Include="Scripts\easyui\jquery.easyui.etreegrid.js" />
+    <Content Include="Scripts\easyui\jquery.easyui.min.js" />
+    <Content Include="Scripts\easyui\jquery.easyui.treegrid.dnd.js" />
+    <Content Include="Scripts\easyui\source\jquery.accordion.js" />
+    <Content Include="Scripts\easyui\source\jquery.calendar.js" />
+    <Content Include="Scripts\easyui\source\jquery.combo.js" />
+    <Content Include="Scripts\easyui\source\jquery.combobox.js" />
+    <Content Include="Scripts\easyui\source\jquery.combogrid.js" />
+    <Content Include="Scripts\easyui\source\jquery.combotree.js" />
+    <Content Include="Scripts\easyui\source\jquery.datagrid.js" />
+    <Content Include="Scripts\easyui\source\jquery.datalist.js" />
+    <Content Include="Scripts\easyui\source\jquery.datebox.js" />
+    <Content Include="Scripts\easyui\source\jquery.datetimebox.js" />
+    <Content Include="Scripts\easyui\source\jquery.datetimespinner.js" />
+    <Content Include="Scripts\easyui\source\jquery.dialog.js" />
+    <Content Include="Scripts\easyui\source\jquery.draggable.js" />
+    <Content Include="Scripts\easyui\source\jquery.droppable.js" />
+    <Content Include="Scripts\easyui\source\jquery.filebox.js" />
+    <Content Include="Scripts\easyui\source\jquery.form.js" />
+    <Content Include="Scripts\easyui\source\jquery.layout.js" />
+    <Content Include="Scripts\easyui\source\jquery.linkbutton.js" />
+    <Content Include="Scripts\easyui\source\jquery.menu.js" />
+    <Content Include="Scripts\easyui\source\jquery.menubutton.js" />
+    <Content Include="Scripts\easyui\source\jquery.messager.js" />
+    <Content Include="Scripts\easyui\source\jquery.mobile.js" />
+    <Content Include="Scripts\easyui\source\jquery.numberbox.js" />
+    <Content Include="Scripts\easyui\source\jquery.numberspinner.js" />
+    <Content Include="Scripts\easyui\source\jquery.pagination.js" />
+    <Content Include="Scripts\easyui\source\jquery.panel.js" />
+    <Content Include="Scripts\easyui\source\jquery.parser.js" />
+    <Content Include="Scripts\easyui\source\jquery.progressbar.js" />
+    <Content Include="Scripts\easyui\source\jquery.propertygrid.js" />
+    <Content Include="Scripts\easyui\source\jquery.resizable.js" />
+    <Content Include="Scripts\easyui\source\jquery.searchbox.js" />
+    <Content Include="Scripts\easyui\source\jquery.slider.js" />
+    <Content Include="Scripts\easyui\source\jquery.spinner.js" />
+    <Content Include="Scripts\easyui\source\jquery.splitbutton.js" />
+    <Content Include="Scripts\easyui\source\jquery.tabs.js" />
+    <Content Include="Scripts\easyui\source\jquery.textbox.js" />
+    <Content Include="Scripts\easyui\source\jquery.timespinner.js" />
+    <Content Include="Scripts\easyui\source\jquery.tooltip.js" />
+    <Content Include="Scripts\easyui\source\jquery.tree.js" />
+    <Content Include="Scripts\easyui\source\jquery.treegrid.js" />
+    <Content Include="Scripts\easyui\source\jquery.validatebox.js" />
+    <Content Include="Scripts\easyui\source\jquery.window.js" />
+    <Content Include="Scripts\easyui\themes\black\accordion.css" />
+    <Content Include="Scripts\easyui\themes\black\calendar.css" />
+    <Content Include="Scripts\easyui\themes\black\combo.css" />
+    <Content Include="Scripts\easyui\themes\black\combobox.css" />
+    <Content Include="Scripts\easyui\themes\black\datagrid.css" />
+    <Content Include="Scripts\easyui\themes\black\datebox.css" />
+    <Content Include="Scripts\easyui\themes\black\dialog.css" />
+    <Content Include="Scripts\easyui\themes\black\easyui.css" />
+    <Content Include="Scripts\easyui\themes\black\filebox.css" />
+    <Content Include="Scripts\easyui\themes\black\images\accordion_arrows.png" />
+    <Content Include="Scripts\easyui\themes\black\images\blank.gif" />
+    <Content Include="Scripts\easyui\themes\black\images\calendar_arrows.png" />
+    <Content Include="Scripts\easyui\themes\black\images\combo_arrow.png" />
+    <Content Include="Scripts\easyui\themes\black\images\datagrid_icons.png" />
+    <Content Include="Scripts\easyui\themes\black\images\datebox_arrow.png" />
+    <Content Include="Scripts\easyui\themes\black\images\layout_arrows.png" />
+    <Content Include="Scripts\easyui\themes\black\images\linkbutton_bg.png" />
+    <Content Include="Scripts\easyui\themes\black\images\loading.gif" />
+    <Content Include="Scripts\easyui\themes\black\images\menu_arrows.png" />
+    <Content Include="Scripts\easyui\themes\black\images\messager_icons.png" />
+    <Content Include="Scripts\easyui\themes\black\images\pagination_icons.png" />
+    <Content Include="Scripts\easyui\themes\black\images\panel_tools.png" />
+    <Content Include="Scripts\easyui\themes\black\images\searchbox_button.png" />
+    <Content Include="Scripts\easyui\themes\black\images\slider_handle.png" />
+    <Content Include="Scripts\easyui\themes\black\images\spinner_arrows.png" />
+    <Content Include="Scripts\easyui\themes\black\images\tabs_icons.png" />
+    <Content Include="Scripts\easyui\themes\black\images\tree_icons.png" />
+    <Content Include="Scripts\easyui\themes\black\images\validatebox_warning.png" />
+    <Content Include="Scripts\easyui\themes\black\layout.css" />
+    <Content Include="Scripts\easyui\themes\black\linkbutton.css" />
+    <Content Include="Scripts\easyui\themes\black\menu.css" />
+    <Content Include="Scripts\easyui\themes\black\menubutton.css" />
+    <Content Include="Scripts\easyui\themes\black\messager.css" />
+    <Content Include="Scripts\easyui\themes\black\numberbox.css" />
+    <Content Include="Scripts\easyui\themes\black\pagination.css" />
+    <Content Include="Scripts\easyui\themes\black\panel.css" />
+    <Content Include="Scripts\easyui\themes\black\progressbar.css" />
+    <Content Include="Scripts\easyui\themes\black\propertygrid.css" />
+    <Content Include="Scripts\easyui\themes\black\searchbox.css" />
+    <Content Include="Scripts\easyui\themes\black\slider.css" />
+    <Content Include="Scripts\easyui\themes\black\spinner.css" />
+    <Content Include="Scripts\easyui\themes\black\splitbutton.css" />
+    <Content Include="Scripts\easyui\themes\black\tabs.css" />
+    <Content Include="Scripts\easyui\themes\black\textbox.css" />
+    <Content Include="Scripts\easyui\themes\black\tooltip.css" />
+    <Content Include="Scripts\easyui\themes\black\tree.css" />
+    <Content Include="Scripts\easyui\themes\black\validatebox.css" />
+    <Content Include="Scripts\easyui\themes\black\window.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\accordion.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\calendar.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\combo.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\combobox.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\datagrid.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\datebox.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\dialog.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\easyui.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\filebox.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\accordion_arrows.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\blank.gif" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\calendar_arrows.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\combo_arrow.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\datagrid_icons.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\datebox_arrow.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\layout_arrows.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\linkbutton_bg.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\loading.gif" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\menu_arrows.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\messager_icons.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\pagination_icons.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\panel_tools.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\searchbox_button.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\slider_handle.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\spinner_arrows.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\tabs_icons.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\tree_icons.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\images\validatebox_warning.png" />
+    <Content Include="Scripts\easyui\themes\bootstrap\layout.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\linkbutton.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\menu.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\menubutton.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\messager.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\numberbox.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\pagination.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\panel.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\progressbar.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\propertygrid.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\searchbox.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\slider.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\spinner.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\splitbutton.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\tabs.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\textbox.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\tooltip.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\tree.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\validatebox.css" />
+    <Content Include="Scripts\easyui\themes\bootstrap\window.css" />
+    <Content Include="Scripts\easyui\themes\color.css" />
+    <Content Include="Scripts\easyui\themes\default\accordion.css" />
+    <Content Include="Scripts\easyui\themes\default\calendar.css" />
+    <Content Include="Scripts\easyui\themes\default\combo.css" />
+    <Content Include="Scripts\easyui\themes\default\combobox.css" />
+    <Content Include="Scripts\easyui\themes\default\datagrid.css" />
+    <Content Include="Scripts\easyui\themes\default\datebox.css" />
+    <Content Include="Scripts\easyui\themes\default\dialog.css" />
+    <Content Include="Scripts\easyui\themes\default\easyui.css" />
+    <Content Include="Scripts\easyui\themes\default\filebox.css" />
+    <Content Include="Scripts\easyui\themes\default\images\accordion_arrows.png" />
+    <Content Include="Scripts\easyui\themes\default\images\blank.gif" />
+    <Content Include="Scripts\easyui\themes\default\images\calendar_arrows.png" />
+    <Content Include="Scripts\easyui\themes\default\images\combo_arrow.png" />
+    <Content Include="Scripts\easyui\themes\default\images\datagrid_icons.png" />
+    <Content Include="Scripts\easyui\themes\default\images\datebox_arrow.png" />
+    <Content Include="Scripts\easyui\themes\default\images\layout_arrows.png" />
+    <Content Include="Scripts\easyui\themes\default\images\linkbutton_bg.png" />
+    <Content Include="Scripts\easyui\themes\default\images\loading.gif" />
+    <Content Include="Scripts\easyui\themes\default\images\menu_arrows.png" />
+    <Content Include="Scripts\easyui\themes\default\images\messager_icons.png" />
+    <Content Include="Scripts\easyui\themes\default\images\pagination_icons.png" />
+    <Content Include="Scripts\easyui\themes\default\images\panel_tools.png" />
+    <Content Include="Scripts\easyui\themes\default\images\searchbox_button.png" />
+    <Content Include="Scripts\easyui\themes\default\images\slider_handle.png" />
+    <Content Include="Scripts\easyui\themes\default\images\spinner_arrows.png" />
+    <Content Include="Scripts\easyui\themes\default\images\tabs_icons.png" />
+    <Content Include="Scripts\easyui\themes\default\images\tree_icons.png" />
+    <Content Include="Scripts\easyui\themes\default\images\validatebox_warning.png" />
+    <Content Include="Scripts\easyui\themes\default\layout.css" />
+    <Content Include="Scripts\easyui\themes\default\linkbutton.css" />
+    <Content Include="Scripts\easyui\themes\default\menu.css" />
+    <Content Include="Scripts\easyui\themes\default\menubutton.css" />
+    <Content Include="Scripts\easyui\themes\default\messager.css" />
+    <Content Include="Scripts\easyui\themes\default\numberbox.css" />
+    <Content Include="Scripts\easyui\themes\default\pagination.css" />
+    <Content Include="Scripts\easyui\themes\default\panel.css" />
+    <Content Include="Scripts\easyui\themes\default\progressbar.css" />
+    <Content Include="Scripts\easyui\themes\default\propertygrid.css" />
+    <Content Include="Scripts\easyui\themes\default\searchbox.css" />
+    <Content Include="Scripts\easyui\themes\default\slider.css" />
+    <Content Include="Scripts\easyui\themes\default\spinner.css" />
+    <Content Include="Scripts\easyui\themes\default\splitbutton.css" />
+    <Content Include="Scripts\easyui\themes\default\tabs.css" />
+    <Content Include="Scripts\easyui\themes\default\textbox.css" />
+    <Content Include="Scripts\easyui\themes\default\tooltip.css" />
+    <Content Include="Scripts\easyui\themes\default\tree.css" />
+    <Content Include="Scripts\easyui\themes\default\validatebox.css" />
+    <Content Include="Scripts\easyui\themes\default\window.css" />
+    <Content Include="Scripts\easyui\themes\gray\accordion.css" />
+    <Content Include="Scripts\easyui\themes\gray\calendar.css" />
+    <Content Include="Scripts\easyui\themes\gray\combo.css" />
+    <Content Include="Scripts\easyui\themes\gray\combobox.css" />
+    <Content Include="Scripts\easyui\themes\gray\datagrid.css" />
+    <Content Include="Scripts\easyui\themes\gray\datebox.css" />
+    <Content Include="Scripts\easyui\themes\gray\dialog.css" />
+    <Content Include="Scripts\easyui\themes\gray\easyui.css" />
+    <Content Include="Scripts\easyui\themes\gray\filebox.css" />
+    <Content Include="Scripts\easyui\themes\gray\images\accordion_arrows.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\blank.gif" />
+    <Content Include="Scripts\easyui\themes\gray\images\calendar_arrows.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\combo_arrow.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\datagrid_icons.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\datebox_arrow.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\layout_arrows.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\linkbutton_bg.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\loading.gif" />
+    <Content Include="Scripts\easyui\themes\gray\images\menu_arrows.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\messager_icons.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\pagination_icons.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\panel_tools.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\searchbox_button.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\slider_handle.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\spinner_arrows.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\tabs_icons.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\tree_icons.png" />
+    <Content Include="Scripts\easyui\themes\gray\images\validatebox_warning.png" />
+    <Content Include="Scripts\easyui\themes\gray\layout.css" />
+    <Content Include="Scripts\easyui\themes\gray\linkbutton.css" />
+    <Content Include="Scripts\easyui\themes\gray\menu.css" />
+    <Content Include="Scripts\easyui\themes\gray\menubutton.css" />
+    <Content Include="Scripts\easyui\themes\gray\messager.css" />
+    <Content Include="Scripts\easyui\themes\gray\numberbox.css" />
+    <Content Include="Scripts\easyui\themes\gray\pagination.css" />
+    <Content Include="Scripts\easyui\themes\gray\panel.css" />
+    <Content Include="Scripts\easyui\themes\gray\progressbar.css" />
+    <Content Include="Scripts\easyui\themes\gray\propertygrid.css" />
+    <Content Include="Scripts\easyui\themes\gray\searchbox.css" />
+    <Content Include="Scripts\easyui\themes\gray\slider.css" />
+    <Content Include="Scripts\easyui\themes\gray\spinner.css" />
+    <Content Include="Scripts\easyui\themes\gray\splitbutton.css" />
+    <Content Include="Scripts\easyui\themes\gray\tabs.css" />
+    <Content Include="Scripts\easyui\themes\gray\textbox.css" />
+    <Content Include="Scripts\easyui\themes\gray\tooltip.css" />
+    <Content Include="Scripts\easyui\themes\gray\tree.css" />
+    <Content Include="Scripts\easyui\themes\gray\validatebox.css" />
+    <Content Include="Scripts\easyui\themes\gray\window.css" />
+    <Content Include="Scripts\easyui\themes\metro\accordion.css" />
+    <Content Include="Scripts\easyui\themes\metro\calendar.css" />
+    <Content Include="Scripts\easyui\themes\metro\combo.css" />
+    <Content Include="Scripts\easyui\themes\metro\combobox.css" />
+    <Content Include="Scripts\easyui\themes\metro\datagrid.css" />
+    <Content Include="Scripts\easyui\themes\metro\datebox.css" />
+    <Content Include="Scripts\easyui\themes\metro\dialog.css" />
+    <Content Include="Scripts\easyui\themes\metro\easyui.css" />
+    <Content Include="Scripts\easyui\themes\metro\filebox.css" />
+    <Content Include="Scripts\easyui\themes\metro\images\accordion_arrows.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\blank.gif" />
+    <Content Include="Scripts\easyui\themes\metro\images\calendar_arrows.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\combo_arrow.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\datagrid_icons.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\datebox_arrow.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\layout_arrows.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\linkbutton_bg.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\loading.gif" />
+    <Content Include="Scripts\easyui\themes\metro\images\menu_arrows.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\messager_icons.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\pagination_icons.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\panel_tools.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\searchbox_button.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\slider_handle.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\spinner_arrows.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\tabs_icons.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\tree_icons.png" />
+    <Content Include="Scripts\easyui\themes\metro\images\validatebox_warning.png" />
+    <Content Include="Scripts\easyui\themes\metro\layout.css" />
+    <Content Include="Scripts\easyui\themes\metro\linkbutton.css" />
+    <Content Include="Scripts\easyui\themes\metro\menu.css" />
+    <Content Include="Scripts\easyui\themes\metro\menubutton.css" />
+    <Content Include="Scripts\easyui\themes\metro\messager.css" />
+    <Content Include="Scripts\easyui\themes\metro\numberbox.css" />
+    <Content Include="Scripts\easyui\themes\metro\pagination.css" />
+    <Content Include="Scripts\easyui\themes\metro\panel.css" />
+    <Content Include="Scripts\easyui\themes\metro\progressbar.css" />
+    <Content Include="Scripts\easyui\themes\metro\propertygrid.css" />
+    <Content Include="Scripts\easyui\themes\metro\searchbox.css" />
+    <Content Include="Scripts\easyui\themes\metro\slider.css" />
+    <Content Include="Scripts\easyui\themes\metro\spinner.css" />
+    <Content Include="Scripts\easyui\themes\metro\splitbutton.css" />
+    <Content Include="Scripts\easyui\themes\metro\tabs.css" />
+    <Content Include="Scripts\easyui\themes\metro\textbox.css" />
+    <Content Include="Scripts\easyui\themes\metro\tooltip.css" />
+    <Content Include="Scripts\easyui\themes\metro\tree.css" />
+    <Content Include="Scripts\easyui\themes\metro\validatebox.css" />
+    <Content Include="Scripts\easyui\themes\metro\window.css" />
+    <Content Include="Scripts\jquery\jquery.browser.js" />
+    <Content Include="Scripts\jquery\jquery.browser.min.js" />
+    <Content Include="Scripts\jquery\jquery.jqlouds.min.js" />
+    <Content Include="Scripts\jquery\jquery.json-2.4.min.js" />
+    <Content Include="Scripts\jquery\jquery.min.js" />
+    <Content Include="Scripts\projects\login.js" />
+    <Content Include="Scripts\projects\project.js" />
+    <Content Include="Scripts\utils\jquery.util.easyui.config.js" />
+    <Content Include="Scripts\utils\jquery.util.easyui.extension.js" />
+    <Content Include="Scripts\utils\jquery.util.easyui.fn.js" />
+    <Content Include="Scripts\utils\jquery.util.easyui.form.js" />
+    <Content Include="Scripts\utils\jquery.util.easyui.grid.js" />
+    <Content Include="Scripts\utils\jquery.util.easyui.js" />
+    <Content Include="Scripts\utils\jquery.util.easyui.tree.js" />
+    <Content Include="Scripts\utils\jquery.util.js" />
+    <Content Include="Scripts\utils\jquery.util.webuploader.js" />
+    <Content Include="Scripts\utils\tests\jquery.util.test.js" />
+    <Content Include="Scripts\utils\tests\util.test.js" />
+    <Content Include="Scripts\utils\util.js" />
+    <Content Include="Scripts\webuploader\Uploader.swf" />
+    <Content Include="Scripts\webuploader\webuploader.css" />
+    <Content Include="Scripts\webuploader\webuploader.js" />
+    <Content Include="Scripts\webuploader\webuploader.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Authentication\Login.cshtml" />
+    <Content Include="Views\Desktop\Index.cshtml" />
+    <Content Include="Views\Error\BrowserError.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
+    <Content Include="Views\Error\Maintenance.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index\Center.cshtml" />
+    <Content Include="Views\Home\Index\Left.cshtml" />
+    <Content Include="Views\Home\Index\Top.cshtml" />
+    <Content Include="Views\Shared\Commons\CloseDialogButton.cshtml" />
+    <Content Include="Views\Shared\ContentLayout.cshtml" />
+    <Content Include="Views\Shared\Controls\ValidateCode.cshtml" />
+    <Content Include="Views\Shared\Menus\FormMenu.cshtml" />
+    <Content Include="Views\Shared\Menus\GridMenu.cshtml" />
+    <Content Include="Views\Shared\Menus\TreeGridMenu.cshtml" />
+    <Content Include="Views\Shared\Menus\TreeMenu.cshtml" />
+    <Content Include="Views\Shared\Uploaders\Images.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Systems\Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Systems\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Systems\Views\Tenant\Index.cshtml" />
+    <Content Include="Areas\Systems\Views\Tenant\Parts\QueryForm.cshtml" />
+    <Content Include="Areas\Commons\Views\web.config" />
+    <Content Include="Areas\Commons\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Commons\Views\Area\Index.cshtml" />
+    <Content Include="Areas\Commons\Views\Area\Parts\QueryForm.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Commons\Models\" />
+    <Folder Include="Areas\Commons\Views\Shared\" />
+    <Folder Include="Areas\Systems\Models\" />
+    <Folder Include="Areas\Systems\Views\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domains\Applications.Domains\Applications.Domains.csproj">
+      <Project>{5aa5663d-2e75-4172-a5e7-a9ea306d8e68}</Project>
+      <Name>Applications.Domains</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\01-Applications.Infrastructure\01-Applications.Infrastructure.csproj">
+      <Project>{c477f31b-0437-469e-bfec-63fbf9b7c3a8}</Project>
+      <Name>01-Applications.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\02-Applications.Datas.Ef\02-Applications.Datas.Ef.csproj">
+      <Project>{6eddd681-6266-4976-9e5c-c0b1828f3779}</Project>
+      <Name>02-Applications.Datas.Ef</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Applications.Services\Applications.Services.csproj">
+      <Project>{60e033e2-6086-46cd-83a1-20d261d5dd3c}</Project>
+      <Name>Applications.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.ApplicationServices\Util.ApplicationServices.csproj">
+      <Project>{74c54b8a-cf80-4a00-806a-908f948d10e9}</Project>
+      <Name>Util.ApplicationServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Core\Util.Core.csproj">
+      <Project>{3598b7c6-fb59-4348-9c95-66fb48fff380}</Project>
+      <Name>Util.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Datas.Ef\03-Util.Datas.Ef.csproj">
+      <Project>{1e9c5e64-1d98-4214-b107-96054bbc1c69}</Project>
+      <Name>03-Util.Datas.Ef</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Datas.MySql\05-Util.Datas.MySql.csproj">
+      <Project>{1fb8b38d-78bd-40e2-9a28-d390d887ff06}</Project>
+      <Name>05-Util.Datas.MySql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Datas.SqlServer\04-Util.Datas.SqlServer.csproj">
+      <Project>{ef0514a0-339c-4846-a3d6-5f41f3c2dc31}</Project>
+      <Name>04-Util.Datas.SqlServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Datas.Sql\02-Util.Datas.Sql.csproj">
+      <Project>{f43f7230-2cf2-4f5d-a668-a116771a6e2c}</Project>
+      <Name>02-Util.Datas.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Datas\01-Util.Datas.csproj">
+      <Project>{1a0c14be-c430-46c4-916f-54b726774d00}</Project>
+      <Name>01-Util.Datas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.DI.Autofac\Util.DI.Autofac.csproj">
+      <Project>{7dbe459d-5563-4db7-ad8e-e658b867d894}</Project>
+      <Name>Util.DI.Autofac</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Domains\Util.Domains.csproj">
+      <Project>{cdc1ad6e-c610-4bc4-ac3f-a4d405b48d94}</Project>
+      <Name>Util.Domains</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Json\Util.Json.csproj">
+      <Project>{eeea67f9-9089-481d-a4dc-0966dec9fd7d}</Project>
+      <Name>Util.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Logs.Log4\Util.Logs.Log4.csproj">
+      <Project>{b3511358-3ab3-46c3-b747-787a1383a4e8}</Project>
+      <Name>Util.Logs.Log4</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Security.Webs\Util.Security.Webs.csproj">
+      <Project>{4318228d-d851-4d4c-8833-40036ad52ec0}</Project>
+      <Name>Util.Security.Webs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Security\Util.Security.csproj">
+      <Project>{64a4e83c-b621-4a9c-8ce0-273addfb2a5c}</Project>
+      <Name>Util.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Uploaders.WebUploader\Util.Uploaders.WebUploader.csproj">
+      <Project>{4b2208d0-7974-474d-98cc-a1f294b7883a}</Project>
+      <Name>Util.Uploaders.WebUploader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Webs.EasyUi\Util.Webs.EasyUi.csproj">
+      <Project>{ee2841ef-79d9-43b6-aa04-1e2edc44b406}</Project>
+      <Name>Util.Webs.EasyUi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Webs.Mvc\Util.Webs.Mvc.csproj">
+      <Project>{dcc52cfa-4c7f-4bd6-9df3-3cdf218e11cb}</Project>
+      <Name>Util.Webs.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util.Framework\Util.Webs\Util.Webs.csproj">
+      <Project>{e900666e-35d9-4bce-9335-16e34458fd92}</Project>
+      <Name>Util.Webs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>14553</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:14553/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
