@@ -44,12 +44,16 @@
     <Compile Include="Enums\TenantState.cs" />
     <Compile Include="Models\Commons\Area.Base.cs" />
     <Compile Include="Models\Commons\Area.cs" />
+    <Compile Include="Models\Systems\Application.Base.cs" />
+    <Compile Include="Models\Systems\Application.cs" />
     <Compile Include="Models\Systems\Tenant.Base.cs" />
     <Compile Include="Models\Systems\Tenant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\Commons\AreaQuery.cs" />
+    <Compile Include="Queries\Systems\ApplicationQuery.cs" />
     <Compile Include="Queries\Systems\TenantQuery.cs" />
     <Compile Include="Repositories\Commons\IAreaRepository.cs" />
+    <Compile Include="Repositories\Systems\IApplicationRepository.cs" />
     <Compile Include="Repositories\Systems\ITenantRepository.cs" />
     <Compile Include="Services\Systems\ISiteManager.cs" />
     <Compile Include="Services\Systems\SiteManagerBase.cs" />

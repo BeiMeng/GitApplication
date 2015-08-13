@@ -44,14 +44,14 @@ namespace Applications.Services.Configs.IocConfigs {
         /// 加载领域服务
         /// </summary>
         private void LoadDomainServices( ContainerBuilder builder ) {
-            builder.RegisterType<TenantService>().As<ITenantService>().InstancePerLifetimeScope();
+            //builder.RegisterType<TenantService>().As<ITenantService>().InstancePerLifetimeScope();
         }
 
         /// <summary>
         /// 加载仓储
         /// </summary>
         private void LoadRepositories( ContainerBuilder builder ) {
-            builder.RegisterType<TenantRepository>().As<ITenantRepository>().InstancePerLifetimeScope();
+            //builder.RegisterType<TenantRepository>().As<ITenantRepository>().InstancePerLifetimeScope();
 
         }
  
