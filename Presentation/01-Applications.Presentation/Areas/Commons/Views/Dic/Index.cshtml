@@ -1,0 +1,45 @@
+﻿@model DicDto
+@{
+    var x = @Html.EasyUi();
+}
+@section head {
+    <script type="text/javascript">
+        $(function() {
+            $.easyui.newRowUrl = "/commons/dic/new";
+        });
+    </script>
+}
+@section top {
+    @*工具栏*@
+    <div class="toolbar">
+        @x.Button( "添加字典" ).Icon( "icon-add4" ).Plain().ToolTip( R.RememberSave ).AddRootByTreeGrid()
+        @x.Button( "添加下级字典" ).Icon( "icon-add" ).Plain().ToolTip( R.RememberSave ).AddToChildByTreeGrid()
+        @x.Button( "编辑字典" ).Icon( "icon-edit" ).Plain().ToolTip( R.RememberSave ).EditByTreeGrid()
+        @x.Button( "取消编辑" ).Icon( "icon-cancel2" ).Plain().CancelByTreeGrid()
+        @x.Button( "删除字典" ).Icon( "icon-delete3" ).Plain().ToolTip( R.RememberSave ).DeleteByTreeGrid()
+        @x.Button( "上 移" ).Icon( "icon-up" ).Plain().ToolTip( R.RememberSave ).MoveUpByTreeGrid()
+        @x.Button( "下 移" ).Icon( "icon-down" ).Plain().ToolTip( R.RememberSave ).MoveDownByTreeGrid()
+        @x.Button( "保 存" ).Icon( "icon-save" ).Plain().SaveByTreeGrid( "/commons/dic/save" )
+        @x.Button( "冻 结" ).Icon( "icon-delete4" ).Plain().SubmitIdsByTreeGrid( "/commons/dic/disable" )
+        @x.Button( "启 用" ).Icon( "icon-ok2" ).Plain().SubmitIdsByTreeGrid( "/commons/dic/enable" )
+        @x.Button( "刷 新" ).Icon( "icon-refresh" ).Plain().RefreshByTreeGrid()
+    </div>
+}
+@section content {
+    @*右键菜单*@
+    @Html.Partial( "Menus/TreeGridMenu" )
+    @*查询表单*@
+    @Html.Partial( "Parts/QueryForm" )
+    @*表格*@
+    @(x.TreeGrid( "grid" ).Toolbar( "divQuery" ).Url( "/commons/dic/query" )
+        .Menu().EnableDrag().Fit()
+        .Columns(
+            x.GridColumn( t => t.Id ).CheckBox(),
+            x.GridColumn( t => t.Text, 600, true ),
+            x.GridColumn( t => t.Code, 100, true ),
+            x.GridColumn( t => t.SortId, 100, true ),
+            x.GridColumn( t => t.Enabled, 60, true ),
+            x.GridColumn( t => t.CreateTime, 120 )
+        )
+    )
+}

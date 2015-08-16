@@ -172,6 +172,8 @@
     <Compile Include="App_Start\SecurityConfig.cs" />
     <Compile Include="Areas\Commons\CommonsAreaRegistration.cs" />
     <Compile Include="Areas\Commons\Controllers\AreaController.cs" />
+    <Compile Include="Areas\Commons\Controllers\DicController.cs" />
+    <Compile Include="Areas\Systems\Controllers\ApplicationController.cs" />
     <Compile Include="Areas\Systems\Controllers\TenantController.cs" />
     <Compile Include="Areas\Systems\SystemsAreaRegistration.cs" />
     <Compile Include="Base\FormControllerBase.cs" />
@@ -1107,6 +1109,12 @@
     <Content Include="Areas\Commons\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Commons\Views\Area\Index.cshtml" />
     <Content Include="Areas\Commons\Views\Area\Parts\QueryForm.cshtml" />
+    <Content Include="Areas\Systems\Views\Application\Index.cshtml" />
+    <Content Include="Areas\Systems\Views\Application\Parts\QueryForm.cshtml" />
+    <Content Include="Areas\Systems\Views\Application\Parts\Detail.cshtml" />
+    <Content Include="Areas\Systems\Views\Application\Parts\Form.cshtml" />
+    <Content Include="Areas\Commons\Views\Dic\Index.cshtml" />
+    <Content Include="Areas\Commons\Views\Dic\Parts\QueryForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

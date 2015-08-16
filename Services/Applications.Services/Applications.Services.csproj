@@ -88,16 +88,20 @@
   <ItemGroup>
     <Compile Include="Configs\IocConfigs\BeiDreamAppConfig.cs" />
     <Compile Include="Contracts\Commons\IAreaService.cs" />
+    <Compile Include="Contracts\Commons\IDicService.cs" />
     <Compile Include="Contracts\Systems\IApplicationService.cs" />
     <Compile Include="Contracts\Systems\ITenantService.cs" />
     <Compile Include="Dtos\Commons\AreaDto.cs" />
     <Compile Include="Dtos\Commons\AreaDtoExtension.cs" />
+    <Compile Include="Dtos\Commons\DicDto.cs" />
+    <Compile Include="Dtos\Commons\DicDtoExtension.cs" />
     <Compile Include="Dtos\Systems\ApplicationDto.cs" />
     <Compile Include="Dtos\Systems\ApplicationDtoExtension.cs" />
     <Compile Include="Dtos\Systems\TenantDto.cs" />
     <Compile Include="Dtos\Systems\TenantDtoExtension.cs" />
     <Compile Include="Contracts\Identity\IIdentityService.cs" />
     <Compile Include="Impl\Commons\AreaService.cs" />
+    <Compile Include="Impl\Commons\DicService.cs" />
     <Compile Include="Impl\Identity\IdentityService.cs" />
     <Compile Include="Impl\Systems\ApplicationService.cs" />
     <Compile Include="Impl\Systems\TenantService.cs" />

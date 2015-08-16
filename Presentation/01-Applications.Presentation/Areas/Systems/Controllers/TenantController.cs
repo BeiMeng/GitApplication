@@ -2,6 +2,7 @@
 using Applications.Services.Dtos.Systems;
 using Applications.Services.Contracts.Systems;
 using Presentation.Base;
+using Util.Webs.EasyUi.Trees;
 
 namespace Presentation.Areas.Systems.Controllers {
     /// <summary>
@@ -22,5 +23,12 @@ namespace Presentation.Areas.Systems.Controllers {
         /// 租户服务
         /// </summary>
         protected ITenantService TenantService { get; private set; }
+        /// <summary>
+        /// 加载模式
+        /// </summary>
+        protected override LoadMode LoadMode
+        {
+            get { return LoadMode.Sync; }
+        }
     }
 }

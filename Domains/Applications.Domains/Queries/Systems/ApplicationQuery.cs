@@ -1,11 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Applications.Domains.Core;
 using Util;
 using Util.Domains.Repositories;
 
 namespace Applications.Domains.Queries.Systems
 {
-    public class ApplicationQuery : Pager
+    public class ApplicationQuery : EntityQuery
     {
         /// <summary>
         /// 应用程序编号

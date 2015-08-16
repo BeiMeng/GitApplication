@@ -1,0 +1,40 @@
+﻿@model ApplicationDto
+@{
+    var x = @Html.EasyUi();
+}
+@section head {
+    <script type="text/javascript">
+        $(function () {
+            $.easyui.deleteUrl = "/systems/application2/delete";
+        });
+    </script>
+}
+@section top {
+    @*工具栏*@
+    <div class="toolbar">
+        @x.DialogButton( "添加应用程序", "/systems/application/add" ).Icon( "icon-add" ).Plain().DialogSize( 420, 260 )
+        @x.DialogButton( "编辑应用程序", "/systems/application/edit" ).Id( "btnEdit" ).Icon( "icon-edit" ).Plain().DialogSize( 420, 260 ).ShowEditDialog()
+        @x.Button( "删除应用程序" ).Icon( "icon-delete" ).Plain().Delete()
+        @x.DialogButton( "查看详细", "/systems/application/detail" ).Id( "btnLook" ).Icon( "icon-look" ).Plain().DialogSize( 500, 240 ).ShowDetailDialog()
+        @x.Button( "导 出" ).Icon( "icon-export" ).Plain().Href( "/systems/application/export" )
+        @x.Button( "刷 新" ).Icon( "icon-refresh" ).Plain().Refresh()
+    </div>
+}
+@section content {
+    @*右键菜单*@
+    @Html.Partial( "Menus/FormMenu" )
+    @*查询表单*@
+    @Html.Partial( "Parts/QueryForm" )
+    @*表格*@
+    @(x.Grid( "grid" ).Sort( "CreateTime" ).Toolbar( "divQuery" ).Url( "/systems/application/query" )
+        .ShowEditDialogByDblClick().Menu().FitColumns().Fit()
+        .Columns(
+            x.GridColumn( t => t.Id ).CheckBox(),
+            x.GridColumn( t => t.Code, 100 ),
+            x.GridColumn( t => t.Name, 200 ),
+            x.GridColumn( t => t.Enabled, 60 ),
+            x.GridColumn( t => t.CreateTime, 120 ).Sort(),
+            x.GridColumn( t => t.Note, 650 )
+        )
+    )
+}

@@ -51,10 +51,12 @@
   <ItemGroup>
     <Compile Include="BeiDreamAppUnitOfWork.cs" />
     <Compile Include="Mappings\Commons\AreaMap.cs" />
+    <Compile Include="Mappings\Commons\DicMap.cs" />
     <Compile Include="Mappings\Systems\ApplicationsMap.cs" />
     <Compile Include="Mappings\Systems\TenantMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Commons\AreaRepository.cs" />
+    <Compile Include="Repositories\Commons\DicRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\Systems\ApplicationRepository.cs" />
     <Compile Include="Repositories\Systems\TenantRepository.cs" />

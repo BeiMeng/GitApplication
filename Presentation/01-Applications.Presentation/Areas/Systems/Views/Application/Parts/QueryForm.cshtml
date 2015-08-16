@@ -1,0 +1,41 @@
+﻿@model ApplicationQuery
+@{
+    var x = @Html.EasyUi();
+}
+<div id="divQuery" class="divQueryForm">
+    @using ( x.Form( "formQuery" ).AddClass( "form" ).Begin() ) {
+        <dl>
+            <dt>@Html.LabelFor( t => t.Code )</dt>
+            <dd>
+                @x.TextBox( t => t.Code )
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor( t => t.Name )</dt>
+            <dd>
+                @x.TextBox( t => t.Name )
+            </dd>
+        </dl>
+        <dl style="width: 100px">
+            <dt style="width: 30px">@Html.LabelFor( t => t.Enabled )</dt>
+            <dd style="width: 60px">
+                @x.Combox( t => t.Enabled, "" )
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor( t => t.BeginCreateTime )</dt>
+            <dd>
+                @x.TextBox( t => t.BeginCreateTime )
+            </dd>
+        </dl>
+        <dl>
+            <dt>@Html.LabelFor( t => t.EndCreateTime )</dt>
+            <dd>
+                @x.TextBox( t => t.EndCreateTime )
+            </dd>
+        </dl>
+        <span class="button">
+            @x.Button( "查 询" ).Width( 70 ).Icon( "icon-search" ).Query()
+        </span>
+    }
+</div>
