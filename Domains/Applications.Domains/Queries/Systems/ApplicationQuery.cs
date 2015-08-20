@@ -6,7 +6,7 @@ using Util.Domains.Repositories;
 
 namespace Applications.Domains.Queries.Systems
 {
-    public class ApplicationQuery : EntityQuery
+    public class ApplicationQuery : Pager
     {
         /// <summary>
         /// 应用程序编号

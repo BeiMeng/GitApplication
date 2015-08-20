@@ -23,6 +23,9 @@
         @x.Button("冻 结").Icon("icon-delete4").Plain().SubmitIdsByTreeGrid("/Systems/Tenant/disable")
         @x.Button("启 用").Icon("icon-ok2").Plain().SubmitIdsByTreeGrid("/Systems/Tenant/enable")
         @x.Button("刷 新").Icon("icon-refresh").Plain().RefreshByTreeGrid()
+        @x.DialogButton("应用程序设置", "/systems/Tenant/editApplication").Id("btnEdit").Icon("icon-edit").Plain().DialogSize(420, 260).ShowEditDialog()
+        @(x.DialogButton("应用程序设置", "/systems/Tenant/editApplication?TenantId=" + Model.Id).Icon("icon-add").Plain().DialogSize(1030, 510).DialogIcon("icon-rainbow").Title("应用程序设置——当前租户：" + Model.Text).OnInit("validateTenantId")
+        )
     </div>
 }
 @section content {

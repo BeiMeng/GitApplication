@@ -1115,6 +1115,7 @@
     <Content Include="Areas\Systems\Views\Application\Parts\Form.cshtml" />
     <Content Include="Areas\Commons\Views\Dic\Index.cshtml" />
     <Content Include="Areas\Commons\Views\Dic\Parts\QueryForm.cshtml" />
+    <Content Include="Areas\Systems\Views\Tenant\Parts\ApplicationInTenant.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

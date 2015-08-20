@@ -1,13 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Applications.Domains.Core.Tenant.Queries;
 using Util.Domains;
 
 namespace Applications.Domains.Queries.Commons {
     /// <summary>
     /// 字典查询实体
     /// </summary>
-    public class DicQuery : TenantTreeEntityQuery
+    public class DicQuery : TreeEntityQuery
     {
         /// <summary>
         /// 字典编号

@@ -1,8 +1,11 @@
-﻿using Applications.Domains.Queries.Systems;
+﻿using System;
+using System.Web.Mvc;
+using Applications.Domains.Queries.Systems;
 using Applications.Services.Dtos.Systems;
 using Applications.Services.Contracts.Systems;
 using Presentation.Base;
 using Util.Webs.EasyUi.Trees;
+using Util.Webs.Mvc;
 
 namespace Presentation.Areas.Systems.Controllers {
     /// <summary>
@@ -29,6 +32,15 @@ namespace Presentation.Areas.Systems.Controllers {
         protected override LoadMode LoadMode
         {
             get { return LoadMode.Sync; }
+        }
+        /// <summary>
+        /// 获取租户应用程序设置窗口
+        /// </summary>
+        /// <param name="tenantId">租户ID</param>
+        [AjaxOnly]
+        public PartialViewResult EditApplication(Guid tenantId)
+        {
+            return PartialView("Parts/ApplicationInTenant", new ApplicationInTenantDto());
         }
     }
 }
