@@ -97,7 +97,6 @@
     <Compile Include="Dtos\Commons\DicDtoExtension.cs" />
     <Compile Include="Dtos\Systems\ApplicationDto.cs" />
     <Compile Include="Dtos\Systems\ApplicationDtoExtension.cs" />
-    <Compile Include="Dtos\Systems\ApplicationInTenantDto.cs" />
     <Compile Include="Dtos\Systems\TenantDto.cs" />
     <Compile Include="Dtos\Systems\TenantDtoExtension.cs" />
     <Compile Include="Contracts\Identity\IIdentityService.cs" />

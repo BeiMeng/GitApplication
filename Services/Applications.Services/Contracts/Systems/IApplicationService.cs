@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Applications.Domains.Models.Systems;
 using Applications.Domains.Queries.Systems;
 using Util.ApplicationServices;
 using Applications.Services.Dtos.Systems;
+using Util.Domains.Repositories;
 
 namespace Applications.Services.Contracts.Systems {
     /// <summary>
@@ -10,6 +12,6 @@ namespace Applications.Services.Contracts.Systems {
     /// </summary>
     public interface IApplicationService : IBatchService<ApplicationDto, ApplicationQuery>
     {
-        List<ApplicationInTenantDto> GetApplicationInTenantDtos(ApplicationQuery query, Guid tenantId);
+        PagerList<ApplicationDto> Query(ApplicationQuery query, Guid tenantId);
     }
 }

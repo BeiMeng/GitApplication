@@ -36,11 +36,12 @@ namespace Presentation.Areas.Systems.Controllers {
         /// <summary>
         /// 获取租户应用程序设置窗口
         /// </summary>
-        /// <param name="tenantId">租户ID</param>
+        /// <param name="id">租户ID</param>
         [AjaxOnly]
-        public PartialViewResult EditApplication(Guid tenantId)
+        public PartialViewResult EditApplication(Guid id)
         {
-            return PartialView("Parts/ApplicationInTenant", new ApplicationInTenantDto());
+            ApplicationDto applicationDto = new ApplicationDto { TenantId = id };
+            return PartialView("Parts/ApplicationInTenant", applicationDto);
         }
     }
 }

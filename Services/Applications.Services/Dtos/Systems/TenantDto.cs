@@ -218,7 +218,10 @@ namespace Applications.Services.Dtos.Systems {
         /// </summary>
         [DataMember]
         public Byte[] Version { get; set; }
-        
+        /// <summary>
+        /// 应用程序Id集合
+        /// </summary>
+        public List<Guid> ApplicationIds { get; set; }
         /// <summary>
         /// 输出租户状态
         /// </summary>

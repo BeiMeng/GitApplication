@@ -1,24 +1,21 @@
-﻿@model ApplicationInTenantDto
+﻿@model ApplicationDto
 @{
     var x = @Html.EasyUi();
 }
-<div class="divForm">
-    <div class="formtitle">应用程序设置</div>
-    @*表格*@
-    @(x.Grid("grid").Sort("CreateTime").Toolbar("divQuery").Url("/systems/application/query?TenantId="+Model.Tenant.Id)
+@*表格*@
+@(x.Grid("grid").Sort("CreateTime").Toolbar("divQuery").Url("/systems/application/QueryByTenant?TenantId=" + Model.TenantId)
         .FitColumns().Fit()
         .Columns(
-            x.GridColumn(t => t.IsChecked),
+            x.GridColumn(t => t.Id).CheckBox(),
             x.GridColumn(t => t.Code, 100),
             x.GridColumn(t => t.Name, 200),
             x.GridColumn(t => t.Enabled, 60),
             x.GridColumn(t => t.CreateTime, 120).Sort(),
             x.GridColumn(t => t.Note, 650)
         )
-    )
-</div>
+) 
 <div id="dialogButtons">
-    @x.Button("保 存").Icon("icon-ok").Width(90).Submit()
+    @x.Button("保 存").Icon("icon-save").Width(90).Plain().SubmitIdsByGrid("/systems/application/saveApplicationInTenant")
     @x.DialogButton("关 闭").Icon("icon-cancel").Width(90).CloseDialog()
 </div>
 

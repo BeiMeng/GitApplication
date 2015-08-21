@@ -36,5 +36,20 @@ namespace Datas.Ef.Mappings.Systems
             Property(t => t.CreateTime)
                 .HasColumnName("CreateTime");
         }
+        /// <summary>
+        /// 映射导航属性
+        /// </summary>
+        protected override void MapAssociations()
+        {
+            HasMany(t => t.Tenants)
+                    .WithMany(t => t.Applications)
+                    .Map(m =>
+                    {
+                        m.ToTable("TenantInApplications", "Systems");
+                        m.MapLeftKey("ApplicationId");
+                        m.MapRightKey("TenantId");
+                    });
+
+        }
     }
 }

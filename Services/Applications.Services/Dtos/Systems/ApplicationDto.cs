@@ -57,7 +57,20 @@ namespace Applications.Services.Dtos.Systems {
         [Display( Name = "版本号" )]
         [DataMember]
         public Byte[] Version { get; set; }
-        
+
+
+        /// <summary>
+        /// 是否选中，UI上使用
+        /// </summary>
+        [Display(Name = "是否选中")]
+        [DataMember]
+        public bool Checked { get; set; }
+        /// <summary>
+        /// 租户编号(当前需设置应用程序的租户编号)
+        /// </summary>
+        [Display(Name = "租户编号")]
+        [DataMember]
+        public Guid TenantId { get; set; }
         /// <summary>
         /// 输出应用程序状态
         /// </summary>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Applications.Domains.Enums;
@@ -28,7 +29,7 @@ namespace Applications.Domains.Models.Systems {
             : base( id, path,level ) {
                 //Roles = new List<Role>();
                 //SiteInfos = new List<SiteInfo>();
-                //Applications = new List<Application>();
+                Applications = new List<Application>();
                 //Users = new List<User>();
         }
         /// <summary>
@@ -149,11 +150,11 @@ namespace Applications.Domains.Models.Systems {
         ///// 站点信息列表
         ///// </summary>
         //public virtual ICollection<SiteInfo> SiteInfos { get; set; }
-        
-        ///// <summary>
-        ///// 应用程序列表
-        ///// </summary>
-        //public virtual ICollection<Application> Applications { get; set; }
+
+        /// <summary>
+        /// 应用程序列表
+        /// </summary>
+        public virtual ICollection<Application> Applications { get; set; }
         
         ///// <summary>
         ///// 用户列表

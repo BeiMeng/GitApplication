@@ -1,4 +1,6 @@
-﻿using Util;
+﻿using System;
+using System.Linq;
+using Util;
 using Applications.Domains.Models.Systems;
 namespace Applications.Services.Dtos.Systems {
     /// <summary>
@@ -26,8 +28,9 @@ namespace Applications.Services.Dtos.Systems {
         /// 转换为应用程序数据传输对象
         /// </summary>
         /// <param name="entity">应用程序实体</param>
-        public static ApplicationDto ToDto( this Application entity ) {
-            if( entity == null )
+        public static ApplicationDto ToDto( this Application entity )
+        {
+            if (entity == null)
                 return new ApplicationDto();
             return new ApplicationDto {
                 Id = entity.Id.ToString(),
@@ -36,8 +39,19 @@ namespace Applications.Services.Dtos.Systems {
                 Note = entity.Note,
                 Enabled = entity.Enabled,
                 CreateTime = entity.CreateTime,
-                Version = entity.Version,
+                Version = entity.Version
             };
+        }
+        /// <summary>
+        /// 转换为应用程序数据传输对象
+        /// </summary>
+        /// <param name="entity">应用程序实体</param>
+        /// <param name="tenantId">租户编号</param>
+        public static ApplicationDto ToDto(this Application entity, Guid tenantId)
+        {
+            ApplicationDto dto = ToDto(entity);
+            dto.Checked = true; //entity.Tenants.Select(u => u.Id).Contains(tenantId);
+            return dto;
         }
     }
 }
