@@ -4,6 +4,5 @@ namespace Applications.Domains.Repositories.Systems
 {
     public interface IApplicationRepository : IRepository<Application>
     {
-         
     }
 }

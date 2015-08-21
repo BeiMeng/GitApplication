@@ -1,4 +1,5 @@
-﻿using Applications.Domains.Queries.Systems;
+﻿using System.Collections.Generic;
+using Applications.Domains.Queries.Systems;
 using Applications.Domains.Repositories.Systems;
 using Util;
 using Util.Domains.Repositories;
@@ -69,5 +70,10 @@ namespace Applications.Services.Impl.Systems {
         }
         
         #endregion
+
+        public List<ApplicationInTenantDto> GetApplicationInTenantDtos(ApplicationQuery query, System.Guid tenantId)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
