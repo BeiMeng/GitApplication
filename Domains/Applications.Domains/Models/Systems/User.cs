@@ -1,12 +1,12 @@
 ﻿using System;
-using Applications.Domains.Models.Systems;
+using System.Net.Mime;
 using Util;
 
-namespace Applications.Domains.Models.Commons {
+namespace Applications.Domains.Models.Systems {
     /// <summary>
-    /// 字典
+    /// 用户
     /// </summary>
-    public partial class Dic {
+    public partial class User {
         /// <summary>
         /// 租户
         /// </summary>
@@ -17,9 +17,7 @@ namespace Applications.Domains.Models.Commons {
         public override void Init()
         {
             base.Init();
-            if (CreateTime == null)
-                CreateTime = DateTime.Now;
-            PinYin = Str.PinYin(Text);
+            CreateTime = DateTime.Now;
         }
     }
 }

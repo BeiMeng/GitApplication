@@ -50,7 +50,7 @@ namespace Applications.Services.Dtos.Systems {
         public static ApplicationDto ToDto(this Application entity, Guid tenantId)
         {
             ApplicationDto dto = ToDto(entity);
-            dto.Checked = true; //entity.Tenants.Select(u => u.Id).Contains(tenantId);
+            dto.Checked = entity.Tenants.Select(u => u.Id).Contains(tenantId);
             return dto;
         }
     }

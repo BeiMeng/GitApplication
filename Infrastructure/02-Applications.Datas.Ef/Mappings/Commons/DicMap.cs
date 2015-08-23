@@ -51,6 +51,16 @@ namespace Datas.Ef.Mappings.Commons {
             Property( t => t.CreateTime )
                 .HasColumnName( "CreateTime" );
         }
+        /// <summary>
+        /// 映射导航属性
+        /// </summary>
+        protected override void MapAssociations()
+        {
+            //租户
+            HasRequired(t => t.Tenant)
+                .WithMany(t => t.Dics)
+                .HasForeignKey(d => d.TenantId);
+        }
     }
 }
 

@@ -16,7 +16,7 @@ namespace Infrastructure.Security {
         protected override IIdentity GetIdentity( string userId ) {
             var identity = new Identity( true, userId );
             var siteManager = Ioc.Create<ISiteManager>();
-            identity.TenantId = "CC8C48E7-CE1F-4460-8634-C1E798263EDA";
+            identity.TenantId = "32ae412f-4291-4e0f-984f-c5967a836918";
             identity.Skin = siteManager.GetSkin();
             return identity;
         }

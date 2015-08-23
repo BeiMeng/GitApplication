@@ -40,20 +40,5 @@ namespace Presentation.Areas.Systems.Controllers {
             var result = ApplicationService.Query(query, tenantId);
             return ToDataGridResult(ConvertQueryResult(result).ToList(), result.TotalCount);
         }
-
-        /// <summary>
-        /// 保存
-        /// </summary>
-        /// <param name="ids">已选中的列表</param>
-        /// <param name="tenantId"></param>
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [FormExceptionHandler]
-        [AjaxOnly]
-        public ActionResult SaveApplicationInTenant(string ids,Guid tenantId)
-        {
-                      
-            return Ok(R.SaveSuccess);
-        }
     }
 }

@@ -1,17 +1,17 @@
-﻿@model TenantQuery
+﻿@model RoleQuery
 @{
     var x = @Html.EasyUi();
 }
 <div id="divQuery" class="divQueryForm">
     @using ( x.Form( "formQuery" ).AddClass( "form" ).Begin() ) {
         <dl>
-            <dt>@Html.LabelFor( t => t.Code )</dt>
+            <dt>@Html.LabelFor( t => t.Name )</dt>
             <dd>
-                @x.TextBox( t => t.Code )
+                @x.TextBox(t => t.Name)
             </dd>
         </dl>
         <span class="button">
-            @x.Button( "查 询" ).Width( 70 ).Icon( "icon-search" ).QueryByTreeGrid()
+            @x.Button( "查 询" ).Width( 70 ).Icon( "icon-search" ).Query()
         </span>
     }
 </div>

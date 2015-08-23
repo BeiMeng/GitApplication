@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using Applications.Domains.Models.Systems;
 using Applications.Domains.Queries.Systems;
 using Applications.Domains.Repositories.Systems;
+using Applications.Domains.Services.Systems;
 using Util;
 using Util.Domains.Repositories;
 using Util.ApplicationServices;
@@ -19,16 +21,18 @@ namespace Applications.Services.Impl.Systems {
     {
         
         #region 构造方法
-        
+
         /// <summary>
         /// 初始化租户服务
         /// </summary>
         /// <param name="unitOfWork">工作单元</param>
         /// <param name="tenantRepository">租户仓储</param>
-        public TenantService( IBeiDreamAppUnitOfWork unitOfWork, ITenantRepository tenantRepository )
+        /// <param name="applicationManager">应用程序管理器</param>
+        public TenantService( IBeiDreamAppUnitOfWork unitOfWork, ITenantRepository tenantRepository,IApplicationManager applicationManager )
             : base( unitOfWork, tenantRepository ) {
             TenantRepository = tenantRepository;
-        }
+            ApplicationManager = applicationManager;
+            }
         
         #endregion
 
@@ -38,6 +42,10 @@ namespace Applications.Services.Impl.Systems {
         /// 租户仓储
         /// </summary>
         protected ITenantRepository TenantRepository { get; set; }
+        /// <summary>
+        /// 应用程序管理器
+        /// </summary>
+        protected IApplicationManager ApplicationManager { get; set; }
         
         #endregion
         
@@ -84,9 +92,23 @@ namespace Applications.Services.Impl.Systems {
         /// </summary>
         /// <param name="query">租户查询参数</param>
         protected override IQueryBase<Tenant> GetQuery( TenantQuery query ) {
-            return new Query<Tenant>(query).Filter(new TreeEntityCriteria<Tenant>(query));
+            return new Query<Tenant>(query).Filter(new TreeEntityCriteria<Tenant>(query))
+                .Filter(t => t.Code == query.Code)
+                .Filter(t => t.Name.Contains(query.Name))
+                .FilterDate(t => t.CreateTime, query.BeginCreateTime, query.EndCreateTime);
         }
         
         #endregion
+        /// <summary>
+        /// 设置租户拥有的应用程序
+        /// </summary>
+        /// <param name="ids">选择的应用程序ID集合</param>
+        /// <param name="tenantId">租户ID</param>
+        public void SaveTenantInApplications(List<Guid> ids, Guid tenantId)
+        {
+            UnitOfWork.Start();
+            ApplicationManager.SaveTenantInApplications(ids, tenantId);
+            UnitOfWork.Commit();
+        }
     }
 }

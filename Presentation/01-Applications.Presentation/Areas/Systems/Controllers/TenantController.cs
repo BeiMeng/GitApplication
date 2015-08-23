@@ -4,6 +4,7 @@ using Applications.Domains.Queries.Systems;
 using Applications.Services.Dtos.Systems;
 using Applications.Services.Contracts.Systems;
 using Presentation.Base;
+using Util;
 using Util.Webs.EasyUi.Trees;
 using Util.Webs.Mvc;
 
@@ -41,7 +42,21 @@ namespace Presentation.Areas.Systems.Controllers {
         public PartialViewResult EditApplication(Guid id)
         {
             ApplicationDto applicationDto = new ApplicationDto { TenantId = id };
-            return PartialView("Parts/ApplicationInTenant", applicationDto);
+            return PartialView("Parts/TenantInApplications", applicationDto);
+        }
+        /// <summary>
+        /// 保存
+        /// </summary>
+        /// <param name="ids">选中的应用程序ID</param>
+        /// <param name="tenantId">租户ID</param>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [FormExceptionHandler]
+        [AjaxOnly]
+        public ActionResult SaveTenantInApplications(string ids, Guid tenantId)
+        {
+            TenantService.SaveTenantInApplications(ids.ToGuidList(), tenantId);
+            return Ok(R.SaveSuccess);
         }
     }
 }

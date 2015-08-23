@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Applications.Domains.Enums;
+using Applications.Domains.Models.Commons;
 using Util;
 using Util.Domains;
 
@@ -27,10 +28,11 @@ namespace Applications.Domains.Models.Systems {
         /// <param name="id">租户标识</param>
         public Tenant(Guid id, string path, int level)
             : base( id, path,level ) {
-                //Roles = new List<Role>();
+                Roles = new List<Role>();
                 //SiteInfos = new List<SiteInfo>();
                 Applications = new List<Application>();
-                //Users = new List<User>();
+                Users = new List<User>();
+                Dics=new List<Dic>();
         }
         /// <summary>
         /// 租户编码
@@ -140,11 +142,11 @@ namespace Applications.Domains.Models.Systems {
         /// </summary>
         [Required(ErrorMessage = "创建时间不能为空")]
         public DateTime CreateTime { get; set; }
-        
-        ///// <summary>
-        ///// 角色列表
-        ///// </summary>
-        //public virtual ICollection<Role> Roles { get; set; }
+
+        /// <summary>
+        /// 角色列表
+        /// </summary>
+        public virtual ICollection<Role> Roles { get; set; }
         
         ///// <summary>
         ///// 站点信息列表
@@ -155,11 +157,15 @@ namespace Applications.Domains.Models.Systems {
         /// 应用程序列表
         /// </summary>
         public virtual ICollection<Application> Applications { get; set; }
-        
-        ///// <summary>
-        ///// 用户列表
-        ///// </summary>
-        //public virtual ICollection<User> Users { get; set; }
+
+        /// <summary>
+        /// 用户列表
+        /// </summary>
+        public virtual ICollection<User> Users { get; set; }
+        /// <summary>
+        /// 字典列表
+        /// </summary>
+        public virtual ICollection<Dic> Dics { get; set; }
         
         /// <summary>
         /// 添加描述

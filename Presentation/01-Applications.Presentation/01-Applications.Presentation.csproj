@@ -174,7 +174,9 @@
     <Compile Include="Areas\Commons\Controllers\AreaController.cs" />
     <Compile Include="Areas\Commons\Controllers\DicController.cs" />
     <Compile Include="Areas\Systems\Controllers\ApplicationController.cs" />
+    <Compile Include="Areas\Systems\Controllers\RoleController.cs" />
     <Compile Include="Areas\Systems\Controllers\TenantController.cs" />
+    <Compile Include="Areas\Systems\Controllers\UserController.cs" />
     <Compile Include="Areas\Systems\SystemsAreaRegistration.cs" />
     <Compile Include="Base\FormControllerBase.cs" />
     <Compile Include="Base\GridControllerBase.cs" />
@@ -1115,7 +1117,12 @@
     <Content Include="Areas\Systems\Views\Application\Parts\Form.cshtml" />
     <Content Include="Areas\Commons\Views\Dic\Index.cshtml" />
     <Content Include="Areas\Commons\Views\Dic\Parts\QueryForm.cshtml" />
-    <Content Include="Areas\Systems\Views\Tenant\Parts\ApplicationInTenant.cshtml" />
+    <Content Include="Areas\Systems\Views\Tenant\Parts\TenantInApplications.cshtml" />
+    <Content Include="Areas\Systems\Views\User\Index.cshtml" />
+    <Content Include="Areas\Systems\Views\User\Parts\QueryForm.cshtml" />
+    <Content Include="Areas\Systems\Views\Role\Index.cshtml" />
+    <Content Include="Areas\Systems\Views\Role\Parts\QueryForm.cshtml" />
+    <Content Include="Areas\Systems\Views\User\Parts\UsersInRoles.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

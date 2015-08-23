@@ -78,19 +78,23 @@ namespace Applications.Services.Impl.Systems {
         /// </summary>
         /// <param name="query">应用程序查询参数</param>
         protected override IQueryBase<Application> GetQuery( ApplicationQuery query ) {
-            return new Query<Application>( query );
+            return new Query<Application>(query)
+                .Filter(t => t.Code == query.Code)
+                .Filter(t => t.Name.Contains(query.Name))
+                .Filter(t => t.Enabled == query.Enabled)
+                .FilterDate(t => t.CreateTime, query.BeginCreateTime, query.EndCreateTime);
         }
         
         #endregion
         /// <summary>
-        ///
+        ///查询应用程序数据
         /// </summary>
-        /// <param name="param"></param>
-        /// <param name="tenantId"></param>
+        /// <param name="param">查询对象</param>
+        /// <param name="tenantId">租户ID,与此租户ID关联的应用程序checked属性设置为true</param>
         /// <returns></returns>
         public PagerList<ApplicationDto> Query(ApplicationQuery param, Guid tenantId)
         {
-            var query = GetQuery(param);
+            var query = new Query<Application>(param);
             var queryable = ApplicationRepository.Query(query);
             queryable = FileterQueryable(queryable);
             queryable = queryable.OrderBy(query.GetOrderBy()).Pager(query);

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Util.ApplicationServices;
-
+using Util;
 namespace Applications.Services.Dtos.Systems {
     /// <summary>
     /// 应用程序数据传输对象
@@ -68,7 +68,6 @@ namespace Applications.Services.Dtos.Systems {
         /// <summary>
         /// 租户编号(当前需设置应用程序的租户编号)
         /// </summary>
-        [Display(Name = "租户编号")]
         [DataMember]
         public Guid TenantId { get; set; }
         /// <summary>

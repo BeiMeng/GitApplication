@@ -51,11 +51,11 @@ namespace Applications.Domains.Models.Systems
         /// </summary>
         [Required(ErrorMessage = "创建时间不能为空")]
         public DateTime CreateTime { get; set; }
+
         /// <summary>
         /// 租户列表
         /// </summary>
         public virtual ICollection<Tenant> Tenants { get; set; }
-
         /// <summary>
         /// 添加描述
         /// </summary>
