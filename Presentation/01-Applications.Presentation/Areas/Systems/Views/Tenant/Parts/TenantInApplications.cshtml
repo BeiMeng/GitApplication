@@ -29,7 +29,7 @@
       )
 @Html.AntiForgeryToken()
 <div id="dialogButtons">
-    @x.Button("保 存").Icon("icon-save").Width(90).SubmitIdsByGrid("/systems/tenant/saveApplicationInTenant?tenantId=" + Model.TenantId)
+    @x.Button("保 存").Icon("icon-save").Width(90).SubmitIdsByGrid("/systems/tenant/SaveTenantInApplications?tenantId=" + Model.TenantId)
     @x.DialogButton("关 闭").Icon("icon-cancel").Width(90).CloseDialog()
 </div>
 
